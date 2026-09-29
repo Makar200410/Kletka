@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Клетка ОГЭ и ЕГЭ</title>
+  <meta name="description" content="Подготовка к ОГЭ и ЕГЭ по 10 предметам: теория, задания в формате ФИПИ с проверкой и разбором, пробники, карточки, интерактивные лаборатории.">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='4' fill='%23fdfdfa' stroke='%231f3fa6' stroke-width='3'/%3E%3Cpath d='M16 2v28M2 16h28' stroke='%231f3fa6' stroke-width='2'/%3E%3Crect x='17' y='17' width='12' height='12' fill='%23c92f2b'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+  <link rel="stylesheet" href="css/app.css?v=2">
+  <script>
+    /* Тема до отрисовки, чтобы не мигало */
+    try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="sr" href="#main">К содержимому</a>
+  <header class="top" id="top"></header>
+  <main id="main" tabindex="-1">
+    <noscript><p>Для работы сайта включите JavaScript.</p></noscript>
+  </main>
+  <footer class="foot">
+    <span>Клетка — тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <span>Прогресс хранится только в вашем браузере.</span>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+
+  <script src="js/data/registry.js" defer></script>
+  <script src="js/data/math.js" defer></script>
+  <script src="js/data/russian.js" defer></script>
+  <script src="js/data/physics.js" defer></script>
+  <script src="js/data/chemistry.js" defer></script>
+  <script src="js/data/biology.js" defer></script>
+  <script src="js/data/informatics.js" defer></script>
+  <script src="js/data/history.js" defer></script>
+  <script src="js/data/social.js" defer></script>
+  <script src="js/data/english.js" defer></script>
+  <script src="js/data/geography.js" defer></script>
+  <!-- Лаборатории: каждый файл регистрирует KL.labs[id]. Порядок = порядок на странице «Лаборатория». -->
+  <script src="js/labs/graph.js" defer></script>
+  <script src="js/labs/stress.js" defer></script>
+  <script src="js/labs/periodic.js" defer></script>
+  <script src="js/labs/punnett.js" defer></script>
+  <script src="js/app.js?v=2" defer></script>
+</body>
+</html>
