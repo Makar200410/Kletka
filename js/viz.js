@@ -337,7 +337,7 @@
       T(390, 70, 'F — самый', 't tb tr') + T(390, 90, 'электроотрицательный', 'ts') + T(390, 140, 'Fr, Cs — самые', 't tb tg') + T(390, 160, 'активные металлы', 'ts');
     return svg(560, 255, b, 'Периодические закономерности');
   } };
-  F['ph-scale'] = { cap: 'Шкала pH: 7 — нейтральная среда, меньше 7 — кислая, больше 7 — щелочная', svg: function () {
+  F['ph-scale'] = { colors: true, cap: 'Шкала pH: 7 — нейтральная среда, меньше 7 — кислая, больше 7 — щелочная', svg: function () {
     var cols = ['#d7263d', '#e8553b', '#f08a34', '#f4b400', '#e8d33a', '#b8d43a', '#6cc04a', '#2e9e57', '#1d9a8a', '#1f86b8', '#2a62c9', '#3a47b5', '#5a3aa8', '#6f2c96', '#7a2380'];
     var b = '';
     cols.forEach(function (c, i) { b += '<rect x="' + (30 + i * 36) + '" y="50" width="36" height="46" style="fill:' + c + '"/>' + T(48 + i * 36, 115, i, 'tn', 'middle'); });
@@ -662,6 +662,13 @@
   /* ---------- куда вставлять: тема → номер раздела → рисунки ---------- */
   KL.viz = {
     figs: F,
+    /* Помощники для дополнительных файлов js/viz/<предмет>.js */
+    h: { svg: svg, L: L, T: T, C: C, P: P, poly: poly, A: A, arc: arc, plot: plot, timeline: timeline, box: box, sector: sector, bell: bell },
+    /* KL.viz.addMap('id-темы', { 0: ['рисунок'], 2: ['другой'] }) — добавляет рисунки, не затирая имеющиеся */
+    addMap: function (tid, m) {
+      var cur = (KL.viz.map[tid] = KL.viz.map[tid] || {});
+      Object.keys(m).forEach(function (k) { cur[k] = (cur[k] || []).concat(m[k]); });
+    },
     map: {
       'math-func': { 0: ['func-basic'], 2: ['parabola'], 3: ['hyperbola-shift'] },
       'math-plane': { 0: ['right-triangle'], 2: ['areas'], 3: ['circle-angles'] },
