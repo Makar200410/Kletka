@@ -951,3 +951,24 @@ math[display="block"] { margin: 12px 0; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* ================= Иллюстрации (js/viz.js) ================= */
+.viz { margin: 24px 0; padding: 18px 16px 14px; background: var(--sheet); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow-sm); text-align: center; overflow-x: auto; }
+.viz svg { width: 100%; max-width: 580px; min-width: 300px; height: auto; display: block; margin: 0 auto; overflow: visible; }
+.viz figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; line-height: 1.45; text-align: left; max-width: 580px; margin-inline: auto; }
+.viz figcaption b { color: var(--red); font-family: var(--f-mono); font-weight: 700; }
+.viz .gr { stroke: var(--grid-strong); stroke-width: 1; }
+.viz .ax { stroke: var(--muted); stroke-width: 1.5; fill: none; }
+.viz .c1, .viz .c2, .viz .c3, .viz .c4, .viz .c5 { stroke-width: 2.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.viz .c1 { stroke: var(--ink); } .viz .c2 { stroke: var(--red); } .viz .c3 { stroke: var(--ok); } .viz .c4 { stroke: var(--warn); } .viz .c5 { stroke: var(--text); }
+.viz .thin { stroke-width: 1.5; } .viz .wide { stroke-width: 4; } .viz .d { stroke-dasharray: 6 5; }
+.viz .k0 { stroke: none; } .viz .k2 { stroke: var(--red); stroke-width: 1; }
+.viz .fn { fill: none; } .viz .fs { fill: var(--sheet); }
+.viz .f1 { fill: var(--ink-soft); } .viz .f2 { fill: var(--red-soft); } .viz .f3 { fill: var(--ok-soft); } .viz .f4 { fill: var(--warn-soft); }
+.viz .h1, .viz .p1 { fill: var(--ink); } .viz .h2, .viz .p2 { fill: var(--red); } .viz .h3, .viz .p3 { fill: var(--ok); } .viz .h4 { fill: var(--warn); } .viz .h5, .viz .p5 { fill: var(--muted); }
+.viz text { font-family: var(--f-body); }
+.viz .t { fill: var(--text); font-size: 14px; }
+.viz .ts { fill: var(--muted); font-size: 12.5px; }
+.viz .tn { fill: var(--muted); font-size: 11px; font-family: var(--f-mono); }
+.viz .tb { font-weight: 700; } .viz .ti { fill: var(--ink); } .viz .tr { fill: var(--red); } .viz .tg { fill: var(--ok); } .viz .tm { fill: var(--muted); }
+.viz .mono { font-family: var(--f-mono); } .viz .big { font: 700 30px var(--f-mono); }

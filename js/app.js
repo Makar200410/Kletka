@@ -271,6 +271,7 @@
     });
   }
   function enhance(el) {
+    if (KL.viz) $$('.viz[data-viz]', el).forEach(function (v) { var h = KL.viz.figure(v.dataset.viz); if (h) v.outerHTML = h; });
     wrapTables(el);
     mountQuick(el);
     mountLabs(el);
@@ -1179,7 +1180,7 @@
       '<section class="page cheat" id="sec-cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span>' +
       '<button class="btn sm ghost no-print cheat-print" type="button" id="print-cheat" title="Распечатать шпаргалку">' + ICON.print + '<span>Печать</span></button></div><ol>' + t.keyPoints.map(function (k) { return '<li>' + k + '</li>'; }).join('') + '</ol></section>' +
       '<article class="page"><div class="prose" id="theory">' +
-      t.theory.map(function (sec, i) { return '<h2 id="sec-' + i + '"><span class="sec-n" aria-hidden="true">' + (i + 1) + '.</span>' + esc(sec.h) + '</h2>' + sec.html; }).join('') +
+      (function () { var fc = { n: 0 }; return t.theory.map(function (sec, i) { return '<h2 id="sec-' + i + '"><span class="sec-n" aria-hidden="true">' + (i + 1) + '.</span>' + esc(sec.h) + '</h2>' + sec.html + (KL.viz ? KL.viz.forSection(t.id, i, fc) : ''); }).join(''); })() +
       '</div><div class="read-row" id="read-row"></div></article>' +
       '<section class="section" id="practice" aria-labelledby="practice-h"><div class="practice-head"><div><span class="eyebrow">Практика</span><h2 id="practice-h">Задания по теме</h2></div>' +
       '<div class="filter-row"><div class="seg" id="task-filter" role="group" aria-label="Показать задания"><button type="button" data-f="all">Все</button><button type="button" data-f="oge">ОГЭ</button><button type="button" data-f="ege">ЕГЭ</button></div>' +
