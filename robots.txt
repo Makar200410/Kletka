@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /tools/
+Disallow: /.claude/
+Disallow: /*.md$
+
+Sitemap: https://kletka.himpodgotovka.ru/sitemap.xml
