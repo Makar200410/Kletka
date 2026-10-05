@@ -39,16 +39,19 @@ KATEX_PATH=/путь/к/node_modules/katex node tools/validate.js
 
 ## 2. Что осталось сделать (по приоритету)
 
-### Текущее состояние (обновлено)
-Уже сделано: визуал v2, 47 иллюстраций в `js/viz.js`; флеш-карточки у химии, биологии, географии, истории, обществознания, математики, физики, английского; лаборатории `graph`, `stress`, `periodic`, `punnett`, `projectile`, `truth`.
+### Текущее состояние (5 октября 2026)
+Готово: 10 предметов, 140 тем, 1600+ заданий, карточки у всех предметов, все 10 лабораторий, 223 иллюстрации в `js/viz/<предмет>.js`. `node tools/validate.js` (с KaTeX) и `node tools/check-viz.js` — 0 ошибок.
 
 **Что осталось — начинай отсюда:**
-1. Лаборатории `numsys`, `sun`, `timeline`, `verbs` — файлов ещё нет (теги в `index.html` уже стоят, ничего подключать не нужно, только создать файл). Описание — в таблице 2.1 ниже.
-2. Темы: **informatics** (сейчас 2, нужно ещё 6 — список в 2.3), **russian** (сейчас 3, нужно ещё 7), **social** (сейчас 4, нужно ещё 4), **chemistry** и **history** (по 2 темы).
-3. Карточки: **informatics** и **russian** (`cards` пустые).
-4. После этих шагов `node tools/validate.js` без аргументов должен выдать 0 ошибок — сейчас ошибки только из-за нехватки тем и карточек в пп. 2–3.
+1. **Иллюстрации к темам без рисунков** (цель — 3–4 рисунка на тему). Список тем без единого рисунка выводит команда:
+   ```bash
+   node -e "global.window={};const fs=require('fs');eval(fs.readFileSync('js/data/registry.js','utf8'));global.KL=window.KL;for(const f of fs.readdirSync('js/data'))if(f!=='registry.js')eval(fs.readFileSync('js/data/'+f,'utf8'));eval(fs.readFileSync('js/viz.js','utf8'));for(const f of fs.readdirSync('js/viz'))eval(fs.readFileSync('js/viz/'+f,'utf8'));for(const s of KL.subjects)console.log(s.id,s.topics.filter(t=>!KL.viz.map[t.id]).map(t=>t.id).join(' '))"
+   ```
+   На 5 октября больше всего пробелов: math (14 тем), chemistry (11), physics (11), russian (10), biology (9), english (6), social (5).
+2. **Темы:** social — 6 тем, нужны ещё «Социальная сфера» (`soc-society`) и «Политика» (`soc-politics`); english — 8 тем, можно добавить аудирование/чтение и устную часть отдельными микротемами.
+3. **Сверка с демоверсиями ФИПИ 2026** цифр в `exams` (см. 2.5).
 
-Сначала проверь `git status`: если в `js/data/informatics.js`, `js/data/russian.js` или `js/labs/` есть незакоммиченные изменения от прошлого агента, прогони для них валидатор / `node --check`. Если всё проходит — продолжай с того места; если файл сломан — `git checkout -- <файл>` и начни заново.
+Работа по предметам независима: один агент = один предмет (`js/data/<предмет>.js` + `js/viz/<предмет>.js`). Git запускает только координатор.
 
 ### 2.1. Недостающие лаборатории — ВЫСОКИЙ приоритет
 В теории уже стоят вставки `<div class="lab-embed" data-lab="…">`, но файлов нет, поэтому на их месте пусто. Нужно создать по `LABS_GUIDE.md`:
