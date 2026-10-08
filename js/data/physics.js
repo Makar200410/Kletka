@@ -2231,7 +2231,7 @@ $$Q = cm\Delta t \qquad Q = \lambda m \qquad Q = Lm \qquad Q = qm$$
         },
         {
           id: 'phys-measure-6', type: 'input', exam: 'both', difficulty: 2,
-          q: 'Длину бруска измерили линейкой и записали результат $(20{,}0 \pm 0{,}1)$ см. Чему равна относительная погрешность измерения? Ответ дайте в процентах.',
+          q: String.raw`Длину бруска измерили линейкой и записали результат $(20{,}0 \pm 0{,}1)$ см. Чему равна относительная погрешность измерения? Ответ дайте в процентах.`,
           answer: '0.5', tolerance: 0.01, unit: '%',
           hint: String.raw`$\varepsilon = \dfrac{\Delta x}{x}\cdot 100\%$.`,
           solution: String.raw`$\varepsilon = \dfrac{0{,}1}{20{,}0}\cdot 100\% = 0{,}5\%$.`
