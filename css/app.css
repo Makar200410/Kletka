@@ -972,3 +972,14 @@ math[display="block"] { margin: 12px 0; }
 .viz .tn { fill: var(--muted); font-size: 11px; font-family: var(--f-mono); }
 .viz .tb { font-weight: 700; } .viz .ti { fill: var(--ink); } .viz .tr { fill: var(--red); } .viz .tg { fill: var(--ok); } .viz .tm { fill: var(--muted); }
 .viz .mono { font-family: var(--f-mono); } .viz .big { font: 700 30px var(--f-mono); }
+
+/* ================= Уровни сложности в теме ================= */
+.level-banner { display: flex; gap: 12px 18px; align-items: center; flex-wrap: wrap; padding: 14px 18px; border-color: color-mix(in srgb, var(--ink) 35%, var(--line)); background: color-mix(in srgb, var(--ink) 5%, var(--sheet)); }
+.level-banner > div { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 220px; }
+.level-banner b { font: 650 18px var(--f-display); letter-spacing: -0.01em; color: var(--ink); }
+.level-banner .muted { font-size: 14px; }
+.level-div { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; padding: 8px 2px 4px; border-bottom: 1.5px dashed var(--line); font-size: 15px; color: var(--muted); }
+.level-div b { color: var(--text); font-weight: 700; }
+.level-div .muted { font-size: 13.5px; }
+.level-div.on { border-bottom-color: color-mix(in srgb, var(--ink) 50%, transparent); }
+.level-div.on .dots { color: var(--ink); }

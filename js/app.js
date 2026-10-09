@@ -38,6 +38,11 @@
     try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); }
   }
   var LETTERS = 'АБВГДЕЖЗИК';
+  var LEVELS = [
+    { title: 'Уровень 1 · Базовый', hint: 'знание правила и формулы, первая часть экзамена', name: 'Базовый', why: 'Начните с базовых заданий: два-три верных ответа с первой попытки откроют следующий уровень.' },
+    { title: 'Уровень 2 · Повышенный', hint: 'несколько шагов, ловушки экзамена', name: 'Повышенный', why: 'Базу вы знаете. Переходите к заданиям в несколько шагов.' },
+    { title: 'Уровень 3 · Высокий', hint: 'сложная часть ЕГЭ, нестандартные задачи', name: 'Высокий', why: 'Уверенно решаете повышенный уровень — пора к самым трудным задачам.' }
+  ];
   var IS_MAC = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent || '');
   var ICON = {
     search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
@@ -177,6 +182,23 @@
       });
       return { solved: solved, total: total, pct: total ? solved / total : 0, read: !!d.read[t.id], attempted: attempted, firstOk: firstOk };
     },
+    /* Уровень по набору заданий: начинаем с 1-го; уровень открыт, если на предыдущем
+       не меньше двух заданий решены с первой попытки и точность с первой попытки 70% и выше */
+    levelOf: function (tasks) {
+      var d = D(), lv = 1;
+      for (var k = 1; k <= 2; k++) {
+        var tried = 0, first = 0;
+        tasks.forEach(function (q) {
+          var st = d.tasks[q.id];
+          if (!st || Math.max(1, Math.min(3, q.difficulty || 1)) !== k) return;
+          tried++; if (st.first) first++;
+        });
+        if (first >= 2 && first / tried >= 0.7) lv = k + 1; else break;
+      }
+      return lv;
+    },
+    level: function (t) { return Progress.levelOf(t.tasks); },
+    userLevel: function () { return Progress.levelOf(Object.keys(Q).map(function (id) { return Q[id]; })); },
     mastered: function (t) { var st = Progress.topicStats(t); return st.pct >= 0.8 && st.read; },
     started: function (t) { var st = Progress.topicStats(t); return !!(st.attempted || st.read); },
     subjectStats: function (s) {
@@ -1025,9 +1047,13 @@
   function renderDaily(host, mode) {
     var pool = Object.keys(Q).map(function (id) { return Q[id]; }).filter(function (q) { return taskFits(q, mode) && q.type !== 'order'; });
     if (!pool.length) { host.innerHTML = '<div class="empty"><span class="hand">Скоро</span><p>Задача дня появится, когда загрузятся задания.</p></div>'; return; }
+    /* Задача дня подбирается под уровень ученика: новичку — базовая, сильному — посложнее */
+    var lv = Progress.userLevel();
+    var byLv = pool.filter(function (q) { return Math.max(1, Math.min(3, q.difficulty || 1)) === lv; });
+    if (byLv.length) pool = byLv;
     var key = today();
-    var q = pool[hashStr(key + mode) % pool.length];
-    host.innerHTML = '<div class="daily-head"><span class="hand">Задача дня</span><span class="chip" style="' + cvar(q._s) + ';color:var(--c)">' + esc(q._s.name) + '</span></div>' +
+    var q = pool[hashStr(key + mode + lv) % pool.length];
+    host.innerHTML = '<div class="daily-head"><span class="hand">Задача дня</span><span style="display:flex;gap:6px;flex-wrap:wrap"><span class="chip ink" title="Подобрано по вашим ответам">уровень: ' + LEVELS[lv - 1].name.toLowerCase() + '</span><span class="chip" style="' + cvar(q._s) + ';color:var(--c)">' + esc(q._s.name) + '</span></span></div>' +
       '<p class="muted" style="font-size:14px">Одна задача каждый день держит серию. Тема: <a href="#/s/' + q._s.id + '/' + q._t.id + '">' + esc(q._t.title) + '</a></p>';
     var card = renderTask(q, { num: '★' });
     card.classList.remove('sheet');
@@ -1221,15 +1247,33 @@
 
     // Задания
     var list = $('#tasks');
+    /* Задания идут от простых к сложным, группами по уровню; рекомендованный уровень считается по ответам ученика */
     var paintTasks = function () {
       $$('#task-filter button').forEach(function (b) { var on = b.dataset.f === filter; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
       list.innerHTML = '';
-      var n = 0;
-      t.tasks.forEach(function (q) {
-        if (filter !== 'all' && !taskFits(q, filter)) return;
-        list.appendChild(renderTask(q, { num: ++n, onResult: function () { paintSide(); } }));
+      var shown = t.tasks.filter(function (q) { return filter === 'all' || taskFits(q, filter); })
+        .map(function (q, i) { return { q: q, i: i, d: Math.max(1, Math.min(3, q.difficulty || 1)) }; })
+        .sort(function (a, b) { return a.d - b.d || a.i - b.i; });
+      if (!shown.length) { list.innerHTML = '<div class="empty sheet"><p>В этой теме нет заданий для выбранного экзамена.</p></div>'; return; }
+      var lv = Progress.level(t);
+      var target = shown.filter(function (x) { return x.d === lv && !(D().tasks[x.q.id] && D().tasks[x.q.id].solved); })[0] ||
+        shown.filter(function (x) { return !(D().tasks[x.q.id] && D().tasks[x.q.id].solved); })[0];
+      var banner = frag('<div class="level-banner sheet"><div><span class="eyebrow">Ваш уровень в теме</span><b>' + LEVELS[lv - 1].name + '</b><span class="muted">' + LEVELS[lv - 1].why + '</span></div>' +
+        (target ? '<button class="btn primary sm" type="button">Перейти к заданию ' + (shown.indexOf(target) + 1) + '</button>' : '<span class="chip ok">все задания решены</span>') + '</div>');
+      list.appendChild(banner);
+      var n = 0, cur = 0, targetEl = null;
+      shown.forEach(function (x) {
+        if (x.d !== cur) {
+          cur = x.d;
+          var cnt = shown.filter(function (y) { return y.d === cur; }).length;
+          list.appendChild(frag('<div class="level-div' + (cur === lv ? ' on' : '') + '"><span class="dots">' + [1, 2, 3].map(function (i) { return '<i class="' + (i <= cur ? 'on' : '') + '"></i>'; }).join('') + '</span><b>' + LEVELS[cur - 1].title + '</b><span class="muted">' + LEVELS[cur - 1].hint + ' · ' + cnt + ' ' + plural(cnt, 'задание', 'задания', 'заданий') + '</span>' + (cur === lv ? '<span class="chip ink">рекомендуем вам</span>' : '') + '</div>'));
+        }
+        var el = renderTask(x.q, { num: ++n, onResult: function () { paintSide(); } });
+        if (target && x === target) targetEl = el;
+        list.appendChild(el);
       });
-      if (!n) list.innerHTML = '<div class="empty sheet"><p>В этой теме нет заданий для выбранного экзамена.</p></div>';
+      var go = $('button', banner);
+      if (go && targetEl) go.addEventListener('click', function () { scrollToEl(targetEl); var b = $('button, input', targetEl); if (b) b.focus({ preventScroll: true }); });
     };
     $$('#task-filter button').forEach(function (b) { b.addEventListener('click', function () { if (filter === b.dataset.f) return; filter = b.dataset.f; paintTasks(); }); });
     paintTasks();
