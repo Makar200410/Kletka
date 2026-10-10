@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Системы счисления — теория для ОГЭ и ЕГЭ | Информатика | Клетка</title>
+  <meta name="description" content="Системы счисления — Как записывать числа в двоичной, восьмеричной и шестнадцатеричной системах и быстро переводить между ними — от ОГЭ-10 до ЕГЭ-14. Теория для ОГЭ и ЕГЭ по предмету «Информатика»:…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/informatics/inf-numsys/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Системы счисления — теория для ОГЭ и ЕГЭ | Информатика | Клетка">
+  <meta property="og:description" content="Системы счисления — Как записывать числа в двоичной, восьмеричной и шестнадцатеричной системах и быстро переводить между ними — от ОГЭ-10 до ЕГЭ-14. Теория для ОГЭ и ЕГЭ по предмету «Информатика»:…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/informatics/inf-numsys/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/informatics">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/informatics/inf-numsys/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/informatics/">Информатика</a><span aria-hidden="true">/</span><span aria-current="page">Системы счисления</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Информатика · тема 1 из 13 · ОГЭ № 10 · ЕГЭ № 14</span><h1>Системы счисления</h1><p class="topic-summary">Как записывать числа в двоичной, восьмеричной и шестнадцатеричной системах и быстро переводить между ними — от ОГЭ-10 до ЕГЭ-14.</p>
+      <div class="topic-meta"><span class="chip">20 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">22 задания</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Цифра умножается на основание в степени номера разряда (разряды нумеруются справа с нуля)</li><li>Из десятичной в любую систему — деление на основание с остатком, остатки читаются снизу вверх</li><li>2 ↔ 8: группы по 3 бита (триады); 2 ↔ 16: группы по 4 бита (тетрады)</li><li>Двоичная запись 2<sup>n</sup> — единица и n нулей; 2<sup>n</sup> − 1 — n единиц</li><li>В Python: int("1011", 2), bin(), oct(), hex(); для других оснований — свой цикл с % и //</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Как устроено позиционное число</h2><p>В <b>позиционной</b> системе вклад цифры зависит от её места. Основание системы $q$ — это сколько различных цифр в ней есть: в двоичной — 0 и 1, в восьмеричной — от 0 до 7, в шестнадцатеричной — 0–9 и буквы A (10), B (11), C (12), D (13), E (14), F (15).</p>
+<div class="rule"><b>Развёрнутая форма.</b> Разряды нумеруем справа налево, начиная с нуля:<br>$$\overline{a_{n}\dots a_1 a_0}_{\,q} = a_n\cdot q^n + \dots + a_1\cdot q + a_0$$</div>
+<div class="example"><p><b>Пример.</b> Переведём 2A3<sub>16</sub> в десятичную систему.</p>
+<p>$2\cdot 16^2 + 10\cdot 16 + 3 = 512 + 160 + 3 = 675$.</p></div>
+<div class="trap">Цифра всегда меньше основания. Запись 1582<sub>8</sub> невозможна — в восьмеричной системе нет цифры 8. Составители любят проверять это в вопросах вида «в какой системе может быть записано число».</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Переведите 1101<sub>2</sub> в десятичную систему.</summary><p>Ответ: <b>13</b></p></details><figure class="viz"><svg viewBox="0 0 480 150" role="img" aria-label="Двоичная запись числа" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="50" width="60" height="60" rx="6" class="c1 f1"/><text x="70" y="92" class="t big ti" text-anchor="middle">1</text><text x="70" y="36" class="t tb" text-anchor="middle">2⁵</text><text x="70" y="134" class="t tb tr" text-anchor="middle">32</text><rect x="110" y="50" width="60" height="60" rx="6" class="c1 fs"/><text x="140" y="92" class="t big tm" text-anchor="middle">0</text><text x="140" y="36" class="t tb" text-anchor="middle">2⁴</text><text x="140" y="134" class="tn" text-anchor="middle">0</text><rect x="180" y="50" width="60" height="60" rx="6" class="c1 f1"/><text x="210" y="92" class="t big ti" text-anchor="middle">1</text><text x="210" y="36" class="t tb" text-anchor="middle">2³</text><text x="210" y="134" class="t tb tr" text-anchor="middle">8</text><rect x="250" y="50" width="60" height="60" rx="6" class="c1 f1"/><text x="280" y="92" class="t big ti" text-anchor="middle">1</text><text x="280" y="36" class="t tb" text-anchor="middle">2²</text><text x="280" y="134" class="t tb tr" text-anchor="middle">4</text><rect x="320" y="50" width="60" height="60" rx="6" class="c1 fs"/><text x="350" y="92" class="t big tm" text-anchor="middle">0</text><text x="350" y="36" class="t tb" text-anchor="middle">2¹</text><text x="350" y="134" class="tn" text-anchor="middle">0</text><rect x="390" y="50" width="60" height="60" rx="6" class="c1 f1"/><text x="420" y="92" class="t big ti" text-anchor="middle">1</text><text x="420" y="36" class="t tb" text-anchor="middle">2⁰</text><text x="420" y="134" class="t tb tr" text-anchor="middle">1</text><text x="470" y="134" class="t tb tg" text-anchor="end">= 45</text></svg><figcaption><b>Рис. 1.</b> Позиционная запись: 101101₂ = 32 + 8 + 4 + 1 = 45₁₀</figcaption></figure>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Из десятичной — делением с остатком</h2><p>Чтобы перевести число в систему с основанием $q$, делим его на $q$ с остатком, частное снова делим — и так до нуля. Остатки, прочитанные <b>снизу вверх</b> (от последнего к первому), и есть запись числа.</p>
+<div class="example"><p><b>Пример.</b> 45 → двоичная.</p>
+<p>45 : 2 = 22 ост. <b>1</b>; 22 : 2 = 11 ост. <b>0</b>; 11 : 2 = 5 ост. <b>1</b>; 5 : 2 = 2 ост. <b>1</b>; 2 : 2 = 1 ост. <b>0</b>; 1 : 2 = 0 ост. <b>1</b>.</p>
+<p>Читаем снизу вверх: 45 = 101101<sub>2</sub>.</p></div>
+<div class="tip">Для двоичной системы удобнее «разложить на степени двойки»: 45 = 32 + 8 + 4 + 1 → единицы в разрядах 5, 3, 2, 0 → 101101.</div>
+<p>Попробуйте сами — переводите числа между системами в тренажёре:</p>
+<p class="static-lab"><a class="btn" href="/#/labs/numsys">Интерактив «Системы счисления» — открыть в тренажёре →</a></p>
+<div class="trap">Самая частая ошибка — выписать остатки сверху вниз. Тогда 45 превратится в 101101 только случайно (это палиндром), а, например, 6 = 110<sub>2</sub> станет 011.</div><figure class="viz"><svg viewBox="0 0 440 235" role="img" aria-label="Деление на 2" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="15" width="90" height="28" rx="4" class="c5 thin f1"/><text x="85" y="34" class="ts" text-anchor="middle">делим на 2</text><rect x="130" y="15" width="90" height="28" rx="4" class="c5 thin f1"/><text x="175" y="34" class="ts" text-anchor="middle">остаток</text><rect x="40" y="43" width="90" height="30" rx="4" class="c5 thin fs"/><text x="85" y="63" class="t" text-anchor="middle">45</text><rect x="130" y="43" width="90" height="30" rx="4" class="c5 thin f3"/><text x="175" y="63" class="t tb tg" text-anchor="middle">1</text><rect x="40" y="73" width="90" height="30" rx="4" class="c5 thin fs"/><text x="85" y="93" class="t" text-anchor="middle">22</text><rect x="130" y="73" width="90" height="30" rx="4" class="c5 thin f3"/><text x="175" y="93" class="t tb tg" text-anchor="middle">0</text><rect x="40" y="103" width="90" height="30" rx="4" class="c5 thin fs"/><text x="85" y="123" class="t" text-anchor="middle">11</text><rect x="130" y="103" width="90" height="30" rx="4" class="c5 thin f3"/><text x="175" y="123" class="t tb tg" text-anchor="middle">1</text><rect x="40" y="133" width="90" height="30" rx="4" class="c5 thin fs"/><text x="85" y="153" class="t" text-anchor="middle">5</text><rect x="130" y="133" width="90" height="30" rx="4" class="c5 thin f3"/><text x="175" y="153" class="t tb tg" text-anchor="middle">1</text><rect x="40" y="163" width="90" height="30" rx="4" class="c5 thin fs"/><text x="85" y="183" class="t" text-anchor="middle">2</text><rect x="130" y="163" width="90" height="30" rx="4" class="c5 thin f3"/><text x="175" y="183" class="t tb tg" text-anchor="middle">0</text><rect x="40" y="193" width="90" height="30" rx="4" class="c5 thin fs"/><text x="85" y="213" class="t" text-anchor="middle">1</text><rect x="130" y="193" width="90" height="30" rx="4" class="c5 thin f3"/><text x="175" y="213" class="t tb tg" text-anchor="middle">1</text><line x1="245" y1="215" x2="245" y2="69" class="c2"/><polygon points="245,60 241,69 249.1,69" class="h2"/><text x="262" y="130" class="t tr">читаем</text><text x="262" y="150" class="t tr">снизу вверх:</text><text x="262" y="180" class="t mono tb">101101</text></svg><figcaption><b>Рис. 2.</b> Перевод 45 в двоичную систему: делим на 2, остатки читаем снизу вверх — 101101₂</figcaption></figure>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Двоичная, восьмеричная, шестнадцатеричная: быстрый перевод</h2><p>Поскольку $8 = 2^3$ и $16 = 2^4$, каждая восьмеричная цифра — это ровно 3 бита, а шестнадцатеричная — ровно 4 бита.</p>
+<table class="tbl"><tr><th>16-я цифра</th><th>двоичная тетрада</th><th>16-я цифра</th><th>двоичная тетрада</th></tr>
+<tr><td>0</td><td>0000</td><td>8</td><td>1000</td></tr>
+<tr><td>1</td><td>0001</td><td>9</td><td>1001</td></tr>
+<tr><td>2</td><td>0010</td><td>A</td><td>1010</td></tr>
+<tr><td>3</td><td>0011</td><td>B</td><td>1011</td></tr>
+<tr><td>4</td><td>0100</td><td>C</td><td>1100</td></tr>
+<tr><td>5</td><td>0101</td><td>D</td><td>1101</td></tr>
+<tr><td>6</td><td>0110</td><td>E</td><td>1110</td></tr>
+<tr><td>7</td><td>0111</td><td>F</td><td>1111</td></tr></table>
+<div class="rule">Двоичную запись разбиваем на группы <b>справа налево</b>: по 3 бита для восьмеричной, по 4 — для шестнадцатеричной. Недостающие нули дописываем слева.</div>
+<div class="example"><p><b>Пример.</b> 1011011<sub>2</sub> → 16-я: 101 1011 → 0101 1011 → <b>5B</b><sub>16</sub>. В восьмеричную: 1 011 011 → <b>133</b><sub>8</sub>.</p></div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Запишите 11110001<sub>2</sub> в шестнадцатеричной системе.</summary><p>Ответ: <b>F1</b></p></details><figure class="viz"><svg viewBox="0 0 600 210" role="img" aria-label="Группировка битов" xmlns="http://www.w3.org/2000/svg"><rect x="80" y="35" width="40" height="38" rx="4" class="c5 thin fs"/><text x="100" y="59" class="t tb" text-anchor="middle">1</text><rect x="126" y="35" width="40" height="38" rx="4" class="c5 thin fs"/><text x="146" y="59" class="t tb" text-anchor="middle">0</text><rect x="172" y="35" width="40" height="38" rx="4" class="c5 thin fs"/><text x="192" y="59" class="t tb" text-anchor="middle">1</text><rect x="218" y="35" width="40" height="38" rx="4" class="c5 thin fs"/><text x="238" y="59" class="t tb" text-anchor="middle">1</text><rect x="264" y="35" width="40" height="38" rx="4" class="c5 thin fs"/><text x="284" y="59" class="t tb" text-anchor="middle">0</text><rect x="310" y="35" width="40" height="38" rx="4" class="c5 thin fs"/><text x="330" y="59" class="t tb" text-anchor="middle">1</text><rect x="356" y="35" width="40" height="38" rx="4" class="c5 thin fs"/><text x="376" y="59" class="t tb" text-anchor="middle">1</text><rect x="402" y="35" width="40" height="38" rx="4" class="c5 thin fs"/><text x="422" y="59" class="t tb" text-anchor="middle">1</text><line x1="80" y1="90" x2="262" y2="90" class="c1"/><line x1="266" y1="90" x2="448" y2="90" class="c1"/><text x="171" y="112" class="t tb ti" text-anchor="middle">1011 → B</text><text x="357" y="112" class="t tb ti" text-anchor="middle">0111 → 7</text><line x1="80" y1="135" x2="118" y2="135" class="c2"/><line x1="126" y1="135" x2="256" y2="135" class="c2"/><line x1="264" y1="135" x2="448" y2="135" class="c2"/><text x="99" y="157" class="ts tr" text-anchor="middle">10 → 2</text><text x="191" y="157" class="ts tr" text-anchor="middle">110 → 6</text><text x="356" y="157" class="ts tr" text-anchor="middle">111 → 7</text><text x="300" y="195" class="t tb tg" text-anchor="middle">10110111₂ = B7₁₆ = 267₈</text></svg><figcaption><b>Рис. 3.</b> Быстрый перевод: двоичные цифры группируют справа налево — по 4 (в 16-ричную) или по 3 (в 8-ричную)</figcaption></figure>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>ОГЭ-10 и ЕГЭ-14: как решают на экзамене</h2><p><b>ОГЭ, задание 10.</b> Даны три числа в разных системах — нужно найти наибольшее (или наименьшее) и записать его в десятичной. Надёжнее всего перевести все три в десятичную.</p>
+<p><b>ЕГЭ, задание 14.</b> Два главных сюжета.</p>
+<ol><li><b>Выражение со степенями</b>: «Значение выражения $4^{15} + 2^{20} - 16$ записали в двоичной системе. Сколько в записи единиц?»</li>
+<li><b>Неизвестная цифра x</b> в записи чисел — нужно найти x, при котором выражение делится на заданное число.</li></ol>
+<div class="rule">$2^n$ в двоичной — это 1 и $n$ нулей. $2^n - 2^m$ (при $n \gt m$) — это $n - m$ единиц и за ними $m$ нулей. Аналогично в системе с основанием $q$: $q^n - 1$ — это $n$ цифр $(q-1)$.</div>
+<div class="example"><p><b>Пример.</b> $4^{15} + 2^{20} - 16 = 2^{30} + (2^{20} - 2^4)$. Скобка даёт $20 - 4 = 16$ единиц, $2^{30}$ — ещё одну. Итого 17 единиц.</p></div>
+<p>На КЕГЭ проще и безопаснее посчитать программой: Python работает с длинными числами без ограничений.</p>
+<pre><code>x = 4**15 + 2**20 - 16
+print(bin(x).count('1'))     # 17
+
+# перевод в произвольную систему
+def to_base(x, q):
+    digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    s = ''
+    while x &gt; 0:
+        s = digits[x % q] + s
+        x //= q
+    return s or '0'
+
+print(to_base(675, 16))      # 2A3
+print(int('2A3', 16))        # 675 — обратно</code></pre>
+<div class="trap">Функции bin, oct, hex возвращают строку с префиксом: bin(5) = '0b101'. При подсчёте нулей префикс '0b' добавит лишний ноль! Считайте через bin(x)[2:].</div></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 22 задания для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 8, повышенный — 9, высокий — 5. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/informatics/inf-numsys/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/informatics">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/informatics/">← Все темы: Информатика</a><a class="btn primary" href="/s/informatics/inf-logic/">Логика и таблицы истинности →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

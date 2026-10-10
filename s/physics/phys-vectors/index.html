@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Векторы, проекции и сложение сил — теория для ОГЭ и ЕГЭ | Физика | Клетка</title>
+  <meta name="description" content="Векторы, проекции и сложение сил — Как складывать векторы, находить их проекции на оси и считать равнодействующую — основа любой задачи по механике. Теория для ОГЭ и ЕГЭ по предмету «Физика»:…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/physics/phys-vectors/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Векторы, проекции и сложение сил — теория для ОГЭ и ЕГЭ | Физика | Клетка">
+  <meta property="og:description" content="Векторы, проекции и сложение сил — Как складывать векторы, находить их проекции на оси и считать равнодействующую — основа любой задачи по механике. Теория для ОГЭ и ЕГЭ по предмету «Физика»:…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/physics/phys-vectors/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/physics">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/physics/phys-vectors/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/physics/">Физика</a><span aria-hidden="true">/</span><span aria-current="page">Векторы, проекции и сложение сил</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Физика · тема 12 из 19 · ОГЭ № 1–6, 21–22 · ЕГЭ № 1–2, 27</span><h1>Векторы, проекции и сложение сил</h1><p class="topic-summary">Как складывать векторы, находить их проекции на оси и считать равнодействующую — основа любой задачи по механике.</p>
+      <div class="topic-meta"><span class="chip">14 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">22 задания</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Вектор — величина с модулем и направлением; складываются векторы по правилу треугольника или параллелограмма</li><li>Проекция на ось: $F_x = F\cos\alpha$, где $\alpha$ — угол между вектором и осью; знак «минус», если вектор направлен против оси</li><li>Силы вдоль одной прямой: $R = F_1 + F_2$ (в одну сторону) и $R = |F_1 - F_2|$ (в разные)</li><li>Перпендикулярные силы: $R = \sqrt{F_1^2 + F_2^2}$</li><li>Общий случай: $R^2 = F_1^2 + F_2^2 + 2F_1F_2\cos\gamma$, где $\gamma$ — угол между векторами, отложенными из одной точки</li><li>Равновесие: $\sum F_x = 0$, $\sum F_y = 0$; второй закон: $ma_x = \sum F_x$</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Вектор и сложение векторов</h2><p>Скорость, перемещение, ускорение и сила — <b>векторные</b> величины: у них есть и число (модуль), и направление. Масса, время, путь, энергия — <b>скаляры</b>, у них направления нет.</p>
+<p>Складывают векторы двумя способами:</p>
+<ul>
+<li><b>правило треугольника</b>: начало второго вектора помещают в конец первого, сумма идёт из начала первого в конец второго;</li>
+<li><b>правило параллелограмма</b>: векторы откладывают из одной точки, сумма — диагональ параллелограмма, построенного на них.</li>
+</ul>
+<div class="rule">Модуль суммы векторов <b>не равен</b> сумме модулей. $|\vec a + \vec b| = |\vec a| + |\vec b|$ только если векторы направлены в одну сторону.</div>
+<div class="trap">«Сила 3 Н и сила 4 Н дают равнодействующую 7 Н» — верно лишь для сил вдоль одной прямой в одну сторону. Для перпендикулярных сил получится 5 Н, для противоположных — 1 Н.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Две силы 3 Н и 4 Н перпендикулярны друг другу. Чему равен модуль их равнодействующей (в Н)?</summary><p>Ответ: <b>5</b></p></details>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Проекция вектора на ось</h2><p>Проекция превращает векторное равенство в обычное числовое. Опускаем перпендикуляры из начала и конца вектора на ось — длина полученного отрезка со знаком и есть проекция.</p>
+<div class="rule">$$F_x = F\cos\alpha \qquad F_y = F\sin\alpha$$ Здесь $\alpha$ — угол между вектором и осью $x$. Проекция <b>положительна</b>, если вектор смотрит в сторону оси, и <b>отрицательна</b>, если против оси.</div>
+<div class="example"><p><b>Пример.</b> Сила 20 Н направлена под углом $60^\circ$ к горизонтальной оси $x$. Тогда $F_x = 20\cos 60^\circ = 10$ Н, $F_y = 20\sin 60^\circ \approx 17{,}3$ Н. Если бы угол $60^\circ$ отсчитывали от вертикали, синус и косинус поменялись бы местами.</p></div>
+<div class="trap">Косинус — «прилежащий» катет, синус — «противолежащий». Всегда смотрите, от какой оси отсчитан угол. Прежде чем писать $\cos$ или $\sin$, нарисуйте прямоугольный треугольник.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Вектор длиной 10 Н составляет угол $30^\circ$ с осью $x$. Найдите проекцию на ось $y$ (в Н).</summary><p>Ответ: <b>5</b></p></details>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Три частных случая сложения сил</h2><p>В задачах чаще всего встречаются три простых случая и один общий.</p>
+<table class="tbl"><tr><th>Взаимное расположение</th><th>Равнодействующая $R$</th></tr>
+<tr><td>вдоль одной прямой, в одну сторону</td><td>$F_1 + F_2$</td></tr>
+<tr><td>вдоль одной прямой, в противоположные стороны</td><td>$|F_1 - F_2|$</td></tr>
+<tr><td>под углом $90^\circ$</td><td>$\sqrt{F_1^2 + F_2^2}$</td></tr>
+<tr><td>под углом $\gamma$ (общий случай)</td><td>$\sqrt{F_1^2 + F_2^2 + 2F_1F_2\cos\gamma}$</td></tr></table>
+<div class="rule">Общий случай — это теорема косинусов. Угол $\gamma$ берётся между векторами, <i>отложенными из одной точки</i>. При $\gamma = 0^\circ$ получаем $F_1 + F_2$, при $180^\circ$ — $|F_1 - F_2|$, при $90^\circ$ — теорему Пифагора.</div>
+<div class="tip">Две равные силы $F$ под углом $120^\circ$ дают равнодействующую тоже $F$ (треугольник из трёх равных сторон), под углом $60^\circ$ — $F\sqrt{3}$.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Силы 5 Н и 12 Н перпендикулярны. Найдите равнодействующую (в Н).</summary><p>Ответ: <b>13</b></p></details>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Равновесие и второй закон в проекциях</h2><p>Когда сил больше двух или они «разбросаны» по углам, складывать по правилу параллелограмма неудобно. Выбираем оси, проецируем все силы и получаем два уравнения:</p>
+<div class="rule">Равновесие: $\sum F_x = 0,\ \sum F_y = 0$. Движение: $ma_x = \sum F_x,\ ma_y = \sum F_y$.</div>
+<div class="example"><p><b>Пример.</b> Груз массой 6 кг висит на двух одинаковых нитях, каждая образует с горизонтом угол $30^\circ$. Вертикальные проекции: $2T\sin 30^\circ = mg$, откуда $T = \dfrac{mg}{2\sin 30^\circ} = \dfrac{60}{2\cdot 0{,}5} = 60$ Н. Горизонтальные проекции сил натяжения равны по модулю и взаимно уничтожаются.</p></div>
+<div class="trap">Чем более «пологие» нити (меньше угол с горизонтом), тем сильнее они натянуты при том же грузе. Порвать провисающий трос проще всего, когда он почти горизонтален.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Тело массой 1 кг движется под действием двух перпендикулярных сил 3 Н и 4 Н. Чему равно ускорение (м/с²)?</summary><p>Ответ: <b>5</b></p></details></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 22 задания для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 5, повышенный — 13, высокий — 4. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/physics/phys-vectors/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/physics">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/physics/phys-measure/">← Измерения: цена деления, погрешность, единицы СИ</a><a class="btn primary" href="/s/physics/phys-heat-transfer/">Теплота: нагрев, плавление, кипение и тепловой баланс →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

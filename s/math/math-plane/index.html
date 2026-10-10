@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Планиметрия: треугольники, окружность, площади — теория для ОГЭ и ЕГЭ | Математика | Клетка</title>
+  <meta name="description" content="Планиметрия: треугольники, окружность, площади — Треугольники, четырёхугольники, окружность, площади и векторы — всё, что проверяют в геометрической части ОГЭ и в заданиях 1, 2 и 17 ЕГЭ. Теория для…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/math/math-plane/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Планиметрия: треугольники, окружность, площади — теория для ОГЭ и ЕГЭ | Математика | Клетка">
+  <meta property="og:description" content="Планиметрия: треугольники, окружность, площади — Треугольники, четырёхугольники, окружность, площади и векторы — всё, что проверяют в геометрической части ОГЭ и в заданиях 1, 2 и 17 ЕГЭ. Теория для…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/math/math-plane/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/math">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/math/math-plane/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/math/">Математика</a><span aria-hidden="true">/</span><span aria-current="page">Планиметрия: треугольники, окружность, площади</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Математика · тема 6 из 21 · ОГЭ № 15–19, 23–25 · ЕГЭ № 1, 2, 17</span><h1>Планиметрия: треугольники, окружность, площади</h1><p class="topic-summary">Треугольники, четырёхугольники, окружность, площади и векторы — всё, что проверяют в геометрической части ОГЭ и в заданиях 1, 2 и 17 ЕГЭ.</p>
+      <div class="topic-meta"><span class="chip">30 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">22 задания</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Сумма углов треугольника $180^\circ$; $c^2=a^2+b^2$</li><li>Вписанный угол равен половине центрального, опирающегося на ту же дугу</li><li>$S=\dfrac12ab\sin\gamma$; трапеция: $S=\dfrac{a+b}{2}h$</li><li>Теорема косинусов: $c^2=a^2+b^2-2ab\cos\gamma$; синусов: $\dfrac{a}{\sin\alpha}=2R$</li><li>Площади подобных фигур относятся как $k^2$</li><li>$\vec a\cdot\vec b=x_1x_2+y_1y_2$</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Треугольник: углы, Пифагор, тригонометрия</h2><div class="rule"><p>Сумма углов треугольника равна $180^\circ$. Внешний угол равен сумме двух внутренних, не смежных с ним.</p><p>Прямоугольный треугольник: $c^2=a^2+b^2$; $\sin A=\dfrac{a}{c}$, $\cos A=\dfrac{b}{c}$, $\tg A=\dfrac{a}{b}$, где $a$ — катет, противолежащий углу $A$, $b$ — прилежащий катет, $c$ — гипотенуза.</p></div>
+<p>Полезные пифагоровы тройки: $3,4,5$; $5,12,13$; $8,15,17$; $7,24,25$ — и кратные им ($6,8,10$; $9,12,15$). Узнав тройку, вы экономите время на вычислениях.</p>
+<details class="static-quick"><summary><b>Проверь себя.</b> Катеты прямоугольного треугольника равны 6 и 8. Найдите гипотенузу.</summary><p>Ответ: <b>10</b></p></details><figure class="viz"><svg viewBox="0 0 520 260" role="img" aria-label="Прямоугольный треугольник" xmlns="http://www.w3.org/2000/svg"><polygon points="60,220 320,220 60,60" class="c1 f1"/><rect x="60" y="202" width="18" height="18" class="c1 thin fn"/><path d="M274 220 A46 46 0 0 1 280.8 195.9" class="c2"/><text x="262" y="210" class="t tb tr">α</text><text x="44" y="145" class="t tb ti" text-anchor="end">a</text><text x="190" y="242" class="t tb ti" text-anchor="middle">b</text><text x="200" y="128" class="t tb ti">c</text><text x="50" y="234" class="ts" text-anchor="end">C</text><text x="330" y="234" class="ts">A</text><text x="50" y="56" class="ts" text-anchor="end">B</text><text x="360" y="90" class="t tb">a² + b² = c²</text><text x="360" y="122" class="t">sin α = a / c</text><text x="360" y="146" class="t">cos α = b / c</text><text x="360" y="170" class="t">tg α = a / b</text></svg><figcaption><b>Рис. 1.</b> Прямоугольный треугольник: теорема Пифагора и определения синуса, косинуса, тангенса</figcaption></figure>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Важные отрезки и подобие</h2><ul><li>Медиана прямоугольного треугольника, проведённая к гипотенузе, равна половине гипотенузы.</li><li>Средняя линия треугольника параллельна стороне и равна её половине.</li><li>Биссектриса делит противоположную сторону в отношении прилежащих сторон: $\dfrac{AL}{LC}=\dfrac{AB}{BC}$.</li><li>В равнобедренном треугольнике медиана, проведённая к основанию, является биссектрисой и высотой.</li><li>У подобных треугольников стороны пропорциональны с коэффициентом $k$, а площади относятся как $k^2$.</li></ul>
+<div class="trap">Отношение площадей подобных фигур равно $k^2$, а не $k$. Если все стороны увеличили в 3 раза, площадь выросла в 9 раз.</div>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Площади</h2><table class="tbl"><tr><th>Фигура</th><th>Площадь</th></tr>
+<tr><td>Треугольник</td><td>$\dfrac12ah$, $\ \dfrac12ab\sin\gamma$</td></tr>
+<tr><td>Параллелограмм</td><td>$ah$, $\ ab\sin\alpha$</td></tr>
+<tr><td>Ромб</td><td>$\dfrac12d_1d_2$ (через диагонали)</td></tr>
+<tr><td>Трапеция</td><td>$\dfrac{a+b}{2}\cdot h$</td></tr>
+<tr><td>Круг и сектор</td><td>$\pi R^2$, $\ \dfrac{\alpha}{360^\circ}\cdot\pi R^2$</td></tr></table>
+<div class="example"><p><b>Пример.</b> Стороны параллелограмма равны 6 и 10, угол между ними $30^\circ$. $S=6\cdot10\cdot\sin30^\circ=60\cdot\dfrac12=30$.</p></div>
+<div class="tip">ОГЭ №18 (фигура на клетчатой бумаге): площадь сложной фигуры удобно искать как площадь описанного прямоугольника минус «лишние» прямоугольные треугольники по краям.</div><figure class="viz"><svg viewBox="0 0 580 210" role="img" aria-label="Площади треугольника, параллелограмма, трапеции" xmlns="http://www.w3.org/2000/svg"><polygon points="20,150 150,150 100,50" class="c1 f1"/><line x1="100" y1="50" x2="100" y2="150" class="c2 d"/><text x="106" y="110" class="t tb tr">h</text><text x="85" y="168" class="t tb ti">a</text><text x="85" y="196" class="t tb" text-anchor="middle">S = ½·a·h</text><polygon points="190,150 310,150 350,50 230,50" class="c1 f3"/><line x1="270" y1="50" x2="270" y2="150" class="c2 d"/><text x="276" y="110" class="t tb tr">h</text><text x="250" y="168" class="t tb ti">a</text><text x="270" y="196" class="t tb" text-anchor="middle">S = a·h</text><polygon points="390,150 560,150 520,50 430,50" class="c1 f4"/><line x1="470" y1="50" x2="470" y2="150" class="c2 d"/><text x="476" y="110" class="t tb tr">h</text><text x="475" y="168" class="t tb ti">a</text><text x="475" y="42" class="t tb ti">b</text><text x="475" y="196" class="t tb" text-anchor="middle">S = ½(a + b)·h</text></svg><figcaption><b>Рис. 2.</b> Площади главных фигур: высота всегда перпендикулярна основанию</figcaption></figure>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Окружность</h2><div class="rule"><ul><li>Вписанный угол равен половине центрального угла, опирающегося на ту же дугу.</li><li>Вписанный угол, опирающийся на диаметр, — прямой.</li><li>Касательная перпендикулярна радиусу, проведённому в точку касания; отрезки касательных, проведённых из одной точки, равны.</li><li>Четырёхугольник можно вписать в окружность, если суммы его противоположных углов равны $180^\circ$; описать около окружности — если равны суммы противоположных сторон.</li></ul></div>
+<p>Радиус описанной окружности прямоугольного треугольника равен половине гипотенузы, радиус вписанной: $r=\dfrac{a+b-c}{2}$. Для любого треугольника $r=\dfrac{S}{p}$, где $p$ — полупериметр.</p>
+<div class="example"><p><b>Пример.</b> Вписанный угол опирается на дугу $100^\circ$. Он равен $50^\circ$, а центральный угол, опирающийся на ту же дугу, — $100^\circ$.</p></div><figure class="viz"><svg viewBox="0 0 500 260" role="img" aria-label="Вписанный и центральный угол" xmlns="http://www.w3.org/2000/svg"><circle cx="170" cy="140" r="100" class="c5 fn"/><path d="M83.4 190 A100 100 0 0 0 256.6 190" class="c2 wide"/><polygon points="83.4,190 170,140 256.6,190" class="c1 f1"/><line x1="83.4" y1="190" x2="152.6" y2="41.5" class="c3"/><line x1="256.6" y1="190" x2="152.6" y2="41.5" class="c3"/><circle cx="170" cy="140" r="4" class="p1"/><circle cx="83.4" cy="190" r="4" class="p5"/><circle cx="256.6" cy="190" r="4" class="p5"/><circle cx="152.6" cy="41.5" r="4" class="p3"/><text x="178" y="144" class="t tb">O</text><text x="75.4" y="206" class="t tb" text-anchor="end">A</text><text x="264.6" y="206" class="t tb">B</text><text x="152.6" y="31.5" class="t tb" text-anchor="middle">C</text><path d="M150.9 151 A22 22 0 0 0 189.1 151" class="c1"/><text x="170" y="180" class="t ti tb" text-anchor="middle">120°</text><path d="M145.4 70.6 A30 30 0 0 0 163.9 69.3" class="c3"/><text x="152.6" y="89.5" class="t tg tb" text-anchor="middle">60°</text><text x="310" y="110" class="t tb">∠ACB = ½ ∠AOB</text><text x="310" y="136" class="ts">опираются на дугу AB</text><text x="310" y="160" class="ts">угол на диаметр = 90°</text></svg><figcaption><b>Рис. 3.</b> Вписанный угол равен половине центрального, опирающегося на ту же дугу</figcaption></figure>
+<h2 id="sec-4"><span class="sec-n" aria-hidden="true">5.</span>Теоремы синусов и косинусов</h2><div class="rule">$$c^2=a^2+b^2-2ab\cos\gamma,\qquad \frac{a}{\sin\alpha}=\frac{b}{\sin\beta}=\frac{c}{\sin\gamma}=2R.$$</div>
+<div class="example"><p><b>Пример.</b> В треугольнике $AB=3$, $AC=5$, $\angle A=120^\circ$. Тогда $BC^2=9+25-2\cdot3\cdot5\cdot\cos120^\circ=34+15=49$, $BC=7$.</p></div>
+<div class="trap">Косинус тупого угла отрицателен: $\cos120^\circ=-\dfrac12$. Потеряв минус, получите $BC^2=19$ вместо $49$.</div>
+<h2 id="sec-5"><span class="sec-n" aria-hidden="true">6.</span>Векторы и где всё это на экзамене</h2><p><b>ЕГЭ №2</b> — векторы на плоскости. Если $\vec a(x_1;\,y_1)$ и $\vec b(x_2;\,y_2)$, то</p>
+<div class="rule">$$|\vec a|=\sqrt{x_1^2+y_1^2},\qquad \vec a\cdot\vec b=x_1x_2+y_1y_2=|\vec a|\cdot|\vec b|\cdot\cos\varphi.$$<p>Векторы перпендикулярны тогда и только тогда, когда их скалярное произведение равно нулю.</p></div>
+<p><b>ОГЭ:</b> задания 15–19 с кратким ответом (треугольники, окружность, четырёхугольники, клетчатая бумага, выбор верных утверждений) и 23–25 с развёрнутым (вычисление, доказательство, задача повышенной сложности). <b>ЕГЭ:</b> задание 1 с кратким ответом и задание 17 (доказательство и вычисление, 3 балла).</p></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 22 задания для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 10, повышенный — 9, высокий — 3. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/math/math-plane/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/math">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/math/math-prob/">← Теория вероятностей</a><a class="btn primary" href="/s/math/math-solid/">Стереометрия →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Программирование на Python — теория для ОГЭ и ЕГЭ | Информатика | Клетка</title>
+  <meta name="description" content="Программирование на Python — Циклы, строки, списки и разбор чужого кода: всё, что нужно для заданий «что выведет программа» и для решения ЕГЭ-задач перебором. Теория для ОГЭ и ЕГЭ по предмету…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/informatics/inf-python/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Программирование на Python — теория для ОГЭ и ЕГЭ | Информатика | Клетка">
+  <meta property="og:description" content="Программирование на Python — Циклы, строки, списки и разбор чужого кода: всё, что нужно для заданий «что выведет программа» и для решения ЕГЭ-задач перебором. Теория для ОГЭ и ЕГЭ по предмету…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/informatics/inf-python/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/informatics">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/informatics/inf-python/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/informatics/">Информатика</a><span aria-hidden="true">/</span><span aria-current="page">Программирование на Python</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Информатика · тема 6 из 13 · ОГЭ № 6, 15 · ЕГЭ № 17, 24–27</span><h1>Программирование на Python</h1><p class="topic-summary">Циклы, строки, списки и разбор чужого кода: всё, что нужно для заданий «что выведет программа» и для решения ЕГЭ-задач перебором.</p>
+      <div class="topic-meta"><span class="chip">25 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">16 заданий</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>range(a, b, c): от a до b−1 с шагом c; b не входит</li><li>Целочисленное деление //, остаток %, степень **</li><li>Срез s[a:b] — от a до b−1; s[::-1] — строка задом наперёд; s[-3:] — последние три символа</li><li>while n > 0: n % 10 — последняя цифра, n //= 10 — отбросить её</li><li>Перебор + условие + счётчик решают большинство заданий ЕГЭ 17, 25, 26</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Циклы и арифметика</h2><p><code>for i in range(a, b, c)</code> перебирает $i = a, a+c, a+2c, \dots$ пока $i \lt b$. Цикл <code>while</code> выполняется, пока условие истинно.</p>
+<pre><code>s = 0
+for i in range(1, 6):
+    s += i * i
+print(s)      # 1 + 4 + 9 + 16 + 25 = 55</code></pre>
+<table class="tbl"><tr><th>Выражение</th><th>Значение</th></tr><tr><td>17 // 5</td><td>3</td></tr><tr><td>17 % 5</td><td>2</td></tr><tr><td>17 / 5</td><td>3.4 (всегда дробное)</td></tr><tr><td>−17 // 5</td><td>−4 (округляет вниз!)</td></tr><tr><td>2 ** 5</td><td>32</td></tr></table>
+<div class="trap"><b>Ловушка.</b> <code>range(2, 20, 3)</code> даёт 2, 5, 8, 11, 14, 17 — число 20 не входит и даже 19 не достигается: шаг 3 «перескакивает».</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Сколько раз выполнится тело цикла for i in range(2, 20, 3)?</summary><p>Ответ: <b>6</b></p></details><figure class="viz"><svg viewBox="0 0 600 150" role="img" aria-label="range" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="70" x2="585" y2="70" class="ax"/><line x1="30" y1="65" x2="30" y2="75" class="ax"/><text x="30" y="92" class="tn" text-anchor="middle">0</text><line x1="80" y1="65" x2="80" y2="75" class="ax"/><text x="80" y="92" class="tn" text-anchor="middle">2</text><line x1="130" y1="65" x2="130" y2="75" class="ax"/><text x="130" y="92" class="tn" text-anchor="middle">4</text><line x1="180" y1="65" x2="180" y2="75" class="ax"/><text x="180" y="92" class="tn" text-anchor="middle">6</text><line x1="230" y1="65" x2="230" y2="75" class="ax"/><text x="230" y="92" class="tn" text-anchor="middle">8</text><line x1="280" y1="65" x2="280" y2="75" class="ax"/><text x="280" y="92" class="tn" text-anchor="middle">10</text><line x1="330" y1="65" x2="330" y2="75" class="ax"/><text x="330" y="92" class="tn" text-anchor="middle">12</text><line x1="380" y1="65" x2="380" y2="75" class="ax"/><text x="380" y="92" class="tn" text-anchor="middle">14</text><line x1="430" y1="65" x2="430" y2="75" class="ax"/><text x="430" y="92" class="tn" text-anchor="middle">16</text><line x1="480" y1="65" x2="480" y2="75" class="ax"/><text x="480" y="92" class="tn" text-anchor="middle">18</text><line x1="530" y1="65" x2="530" y2="75" class="ax"/><text x="530" y="92" class="tn" text-anchor="middle">20</text><line x1="580" y1="65" x2="580" y2="75" class="ax"/><text x="580" y="92" class="tn" text-anchor="middle">22</text><circle cx="80" cy="70" r="6" class="p1"/><text x="80" y="50" class="t tb ti" text-anchor="middle">2</text><circle cx="155" cy="70" r="6" class="p1"/><text x="155" y="50" class="t tb ti" text-anchor="middle">5</text><circle cx="230" cy="70" r="6" class="p1"/><text x="230" y="50" class="t tb ti" text-anchor="middle">8</text><circle cx="305" cy="70" r="6" class="p1"/><text x="305" y="50" class="t tb ti" text-anchor="middle">11</text><circle cx="380" cy="70" r="6" class="p1"/><text x="380" y="50" class="t tb ti" text-anchor="middle">14</text><circle cx="455" cy="70" r="6" class="p1"/><text x="455" y="50" class="t tb ti" text-anchor="middle">17</text><circle cx="530" cy="70" r="6" class="c2 fs"/><text x="530" y="50" class="t tb tr" text-anchor="middle">20</text><text x="300" y="130" class="ts" text-anchor="middle">начало 2, шаг 3, конец 20 (не включается)</text></svg><figcaption><b>Рис. 1.</b> range(2, 20, 3) даёт 2, 5, 8, 11, 14, 17: конец (20) не входит</figcaption></figure>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Строки и списки</h2><p>Нумерация с нуля. Срез <code>s[a:b]</code> берёт символы с номерами от $a$ до $b-1$. Отрицательные индексы считают с конца.</p>
+<pre><code>s = "информатика"
+print(s[2:6])    # форм
+print(s[-3:])    # ика
+print(len(s))    # 11
+a = [3, 1, 4, 1, 5, 9, 2, 6]
+a.sort()
+print(a[2])      # 2  (список стал 1 1 2 3 4 5 6 9)</code></pre>
+<div class="rule">Метод <code>sort()</code> меняет сам список, а <code>sorted(a)</code> возвращает новый. Список <code>[x*x for x in range(5) if x % 2 == 0]</code> — «генератор списка»: получится <code>[0, 4, 16]</code>.</div><figure class="viz"><svg viewBox="0 0 600 215" role="img" aria-label="Срезы строки" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="45" width="60" height="44" rx="4" class="c5 thin fs"/><text x="60" y="72" class="t tb" text-anchor="middle">К</text><text x="60" y="36" class="tn" text-anchor="middle">0</text><text x="60" y="106" class="tn" text-anchor="middle">-6</text><rect x="96" y="45" width="60" height="44" rx="4" class="c5 thin f1"/><text x="126" y="72" class="t tb" text-anchor="middle">О</text><text x="126" y="36" class="tn" text-anchor="middle">1</text><text x="126" y="106" class="tn" text-anchor="middle">-5</text><rect x="162" y="45" width="60" height="44" rx="4" class="c5 thin f1"/><text x="192" y="72" class="t tb" text-anchor="middle">М</text><text x="192" y="36" class="tn" text-anchor="middle">2</text><text x="192" y="106" class="tn" text-anchor="middle">-4</text><rect x="228" y="45" width="60" height="44" rx="4" class="c5 thin f1"/><text x="258" y="72" class="t tb" text-anchor="middle">П</text><text x="258" y="36" class="tn" text-anchor="middle">3</text><text x="258" y="106" class="tn" text-anchor="middle">-3</text><rect x="294" y="45" width="60" height="44" rx="4" class="c5 thin fs"/><text x="324" y="72" class="t tb" text-anchor="middle">О</text><text x="324" y="36" class="tn" text-anchor="middle">4</text><text x="324" y="106" class="tn" text-anchor="middle">-2</text><rect x="360" y="45" width="60" height="44" rx="4" class="c5 thin fs"/><text x="390" y="72" class="t tb" text-anchor="middle">Т</text><text x="390" y="36" class="tn" text-anchor="middle">5</text><text x="390" y="106" class="tn" text-anchor="middle">-1</text><line x1="96" y1="122" x2="294" y2="122" class="c1"/><text x="195" y="142" class="t tb ti" text-anchor="middle">s[1:4] → «ОМП»</text><text x="30" y="178" class="t tb tr">s[::-1] → «ТОПМОК»</text><text x="30" y="200" class="ts">сверху — индексы слева направо, снизу — отрицательные</text></svg><figcaption><b>Рис. 2.</b> Индексы строки «КОМПОТ»: срез s[1:4] берёт индексы 1, 2, 3 (конец не включается); s[::-1] — строка задом наперёд</figcaption></figure>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Цифры числа и делители</h2><pre><code>n = 1234
+s = 0
+while n &gt; 0:
+    s += n % 10    # последняя цифра
+    n //= 10       # убираем её
+print(s)           # 10</code></pre>
+<p>Число делителей считаем циклом: <code>d = sum(1 for k in range(1, n + 1) if n % k == 0)</code>. Для чисел до нескольких миллионов перебирают $k$ только до $\sqrt{n}$, учитывая пары $(k,\ n/k)$.</p>
+<div class="example"><p><b>Типичное ЕГЭ-25.</b> Сколько чисел из отрезка [1000; 1100] имеют ровно 4 делителя? Перебираем $n$, считаем делители, увеличиваем счётчик: ответ 23.</p></div>
+<div class="tip">В заданиях-перебиралках запускайте программу на маленьком примере из условия и сверяйте с ним — это ловит 90% ошибок.</div><figure class="viz"><svg viewBox="0 0 600 170" role="img" aria-label="Цифры числа" xmlns="http://www.w3.org/2000/svg"><rect x="60" y="30" width="50" height="46" rx="4" class="c1 f1"/><text x="85" y="58" class="t tb" text-anchor="middle">3</text><rect x="110" y="30" width="50" height="46" rx="4" class="c1 f1"/><text x="135" y="58" class="t tb" text-anchor="middle">4</text><rect x="160" y="30" width="50" height="46" rx="4" class="c2 f2"/><text x="185" y="58" class="t tb" text-anchor="middle">7</text><line x1="60" y1="92" x2="160" y2="92" class="c1"/><text x="110" y="114" class="t tb ti" text-anchor="middle">n // 10 = 34</text><line x1="160" y1="130" x2="210" y2="130" class="c2"/><text x="185" y="152" class="t tb tr" text-anchor="middle">n % 10 = 7</text><text x="300" y="45" class="t mono">while n &gt; 0:</text><text x="300" y="70" class="t mono">    d = n % 10</text><text x="300" y="95" class="t mono">    n //= 10</text><text x="300" y="130" class="ts">цикл снимает цифры справа налево</text></svg><figcaption><b>Рис. 3.</b> Цифры числа: n % 10 — последняя цифра, n // 10 — число без последней цифры</figcaption></figure>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Как читать чужой код</h2><p>Заведите таблицу значений переменных и выполняйте программу по шагам. Обращайте внимание на: границы <code>range</code>, различие <code>=</code> и <code>==</code>, отступы (тело цикла/условия), порядок операций.</p>
+<pre><code>s = 0
+i = 1
+while s &lt; 50:
+    s += i
+    i += 2
+print(s, i)    # 64 17  (суммы 1, 4, 9, …, 64 — квадраты)</code></pre></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 16 заданий для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 5, повышенный — 9, высокий — 2. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/informatics/inf-python/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/informatics">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/informatics/inf-algo/">← Алгоритмы, исполнители и игры</a><a class="btn primary" href="/s/informatics/inf-databases/">Базы данных: таблицы, ключи, связи и запросы →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Цепи постоянного тока: закон Ома, соединения, мощность — теория для ОГЭ и ЕГЭ | Физика | Клетка</title>
+  <meta name="description" content="Цепи постоянного тока: закон Ома, соединения, мощность — Закон Ома для участка и для полной цепи, расчёт смешанного соединения резисторов, мощность и работа тока. Теория для ОГЭ и ЕГЭ по предмету…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/physics/phys-dc-circuits/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Цепи постоянного тока: закон Ома, соединения, мощность — теория для ОГЭ и ЕГЭ | Физика | Клетка">
+  <meta property="og:description" content="Цепи постоянного тока: закон Ома, соединения, мощность — Закон Ома для участка и для полной цепи, расчёт смешанного соединения резисторов, мощность и работа тока. Теория для ОГЭ и ЕГЭ по предмету…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/physics/phys-dc-circuits/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/physics">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/physics/phys-dc-circuits/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/physics/">Физика</a><span aria-hidden="true">/</span><span aria-current="page">Цепи постоянного тока: закон Ома, соединения, мощность</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Физика · тема 16 из 19 · ОГЭ № 11, 13–14 · ЕГЭ № 14–15, 27</span><h1>Цепи постоянного тока: закон Ома, соединения, мощность</h1><p class="topic-summary">Закон Ома для участка и для полной цепи, расчёт смешанного соединения резисторов, мощность и работа тока.</p>
+      <div class="topic-meta"><span class="chip">18 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">17 заданий</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Закон Ома для участка: $I = \dfrac{U}{R}$; сопротивление проводника $R = \rho\dfrac{l}{S}$</li><li>Последовательно: $I$ одинаков, $R = R_1 + R_2$; параллельно: $U$ одинаково, $\dfrac1R = \dfrac1{R_1} + \dfrac1{R_2}$</li><li>Смешанное соединение «сворачивают» по шагам, а потом «разворачивают» обратно</li><li>Полная цепь: $I = \dfrac{\mathcal{E}}{R + r}$; напряжение на клеммах $U = \mathcal{E} - Ir$; ток КЗ $\mathcal{E}/r$</li><li>Мощность: $P = UI = I^2R = \dfrac{U^2}{R}$; работа и теплота: $A = Q = I^2Rt$</li><li>Наибольшая мощность во внешней цепи — при $R = r$: $P_{\max} = \dfrac{\mathcal{E}^2}{4r}$</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Закон Ома для участка цепи</h2><p>Сила тока на участке цепи прямо пропорциональна напряжению и обратно пропорциональна сопротивлению.</p>
+<div class="rule">$$I = \dfrac{U}{R}, \qquad R = \rho\dfrac{l}{S}$$ Здесь $\rho$ — удельное сопротивление материала, $l$ — длина проводника, $S$ — площадь его сечения.</div>
+<p>Вольт-амперная характеристика (ВАХ) резистора — прямая, проходящая через начало координат. Чем круче график $I(U)$, тем <b>меньше</b> сопротивление: $R = U/I$ для любой точки прямой.</p>
+<div class="trap">На графике $I(U)$ наклон равен $1/R$, а на графике $U(I)$ — самому $R$. Прежде чем определять сопротивление по графику, посмотрите, какая величина отложена по вертикали.</div>
+<div class="trap">Единицы: если $\rho$ дано в Ом·мм²/м, сечение подставляют в мм², а длину — в метрах. Тогда $R$ получается в омах без пересчётов.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Напряжение на резисторе 12 В, сопротивление 4 Ом. Чему равна сила тока (в А)?</summary><p>Ответ: <b>3</b></p></details>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Последовательное, параллельное и смешанное соединение</h2><table class="tbl"><tr><th></th><th>Последовательное</th><th>Параллельное</th></tr>
+<tr><td>Сила тока</td><td>одинакова: $I = I_1 = I_2$</td><td>складывается: $I = I_1 + I_2$</td></tr>
+<tr><td>Напряжение</td><td>складывается: $U = U_1 + U_2$</td><td>одинаково: $U = U_1 = U_2$</td></tr>
+<tr><td>Сопротивление</td><td>$R = R_1 + R_2$</td><td>$\dfrac{1}{R} = \dfrac{1}{R_1} + \dfrac{1}{R_2}$</td></tr></table>
+<p>Для двух резисторов параллельно удобнее $R = \dfrac{R_1R_2}{R_1 + R_2}$; для $n$ одинаковых — $R = R_0/n$.</p>
+<div class="rule"><b>Алгоритм для смешанного соединения:</b> 1) найдите участки, которые точно параллельны или последовательны, и замените каждый одним резистором; 2) повторяйте, пока не останется один резистор; 3) найдите ток источника; 4) идите обратно и распределяйте токи и напряжения по участкам.</div>
+<div class="example"><p><b>Пример.</b> Резистор $R_1 = 2$ Ом последовательно с двумя параллельными по 4 Ом. Параллельная часть: $2$ Ом, всего $R = 2 + 2 = 4$ Ом. При $U = 12$ В общий ток $I = 3$ А; на параллельной части $U' = 3\cdot 2 = 6$ В; в каждой ветви $I = 6/4 = 1{,}5$ А.</p></div>
+<div class="trap">Общее сопротивление параллельного соединения всегда <b>меньше</b> самого маленького из резисторов. Если у вас получилось больше — вы забыли перевернуть дробь.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Резисторы 12 Ом и 4 Ом соединены параллельно. Чему равно общее сопротивление (в Ом)?</summary><p>Ответ: <b>3</b></p></details>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Закон Ома для полной цепи</h2><p>Реальный источник тока имеет <b>ЭДС</b> $\mathcal{E}$ (работу сторонних сил по переносу единичного заряда) и внутреннее сопротивление $r$. Ток идёт через внешнюю цепь $R$ и через сам источник.</p>
+<div class="rule">$$I = \dfrac{\mathcal{E}}{R + r}, \qquad U = IR = \mathcal{E} - Ir, \qquad I_{\text{кз}} = \dfrac{\mathcal{E}}{r}$$ $U$ — напряжение на клеммах источника. Оно равно $\mathcal{E}$ только при разомкнутой цепи ($I = 0$) и уменьшается с ростом тока.</div>
+<div class="example"><p><b>Пример.</b> $\mathcal{E} = 12$ В, $r = 1$ Ом, $R = 5$ Ом. $I = \dfrac{12}{5 + 1} = 2$ А, напряжение на клеммах $U = 12 - 2\cdot 1 = 10$ В.</p></div>
+<div class="trap">Вольтметр, подключённый к клеммам, показывает $U = \mathcal{E} - Ir$, а не $\mathcal{E}$. Чем меньше сопротивление нагрузки и чем больше ток, тем сильнее «проседает» напряжение.</div>
+<div class="tip">Неизвестные $\mathcal{E}$ и $r$ находят из двух режимов: $\mathcal{E} = I_1(R_1 + r) = I_2(R_2 + r)$ — получается уравнение с одной неизвестной $r$.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> $\mathcal{E} = 12$ В, $r = 1$ Ом, $R = 5$ Ом. Найдите силу тока (в А).</summary><p>Ответ: <b>2</b></p></details>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Мощность и работа тока</h2><p>Работа тока на участке $A = UIt$. Мощность — работа за единицу времени.</p>
+<div class="rule">$$P = UI = I^2R = \dfrac{U^2}{R}, \qquad Q = I^2Rt$$ Формулу для мощности выбирают по тому, что постоянно: при последовательном соединении одинаков ток — удобно $I^2R$; при параллельном одинаково напряжение — удобно $U^2/R$.</div>
+<p>Мощность во внешней цепи зависит от $R$: при малом $R$ ток велик, но напряжение на нагрузке мало; при большом $R$ мало уже сам ток. Максимум — когда $R = r$.</p>
+<div class="example"><p><b>Пример.</b> Лампа 220 В, 100 Вт: сопротивление $R = \dfrac{U^2}{P} = \dfrac{220^2}{100} = 484$ Ом. Ток $I = \dfrac{P}{U}\approx 0{,}45$ А.</p></div>
+<div class="trap">Если две одинаковые лампы включить последовательно в сеть, на каждой будет вдвое меньшее напряжение и вчетверо меньшая мощность (яркость). Формулу $P = U^2/R$ можно применять только для одной и той же лампы — с её настоящим $U$.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Через резистор сопротивлением 10 Ом идёт ток 5 А. Какая мощность выделяется в резисторе (в Вт)?</summary><p>Ответ: <b>250</b></p></details></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 17 заданий для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 2, повышенный — 12, высокий — 3. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/physics/phys-dc-circuits/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/physics">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/physics/phys-electrostatics/">← Электростатика: закон Кулона, поле, потенциал, конденсатор</a><a class="btn primary" href="/s/physics/phys-induction/">Электромагнитная индукция: закон Фарадея, правило Ленца, самоиндукция →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

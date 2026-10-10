@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Электромагнитная индукция: закон Фарадея, правило Ленца, самоиндукция — теория для ЕГЭ и ОГЭ | Физика | Клетка</title>
+  <meta name="description" content="Электромагнитная индукция: закон Фарадея, правило Ленца, самоиндукция — Как найти ЭДС индукции по изменению магнитного потока, определить направление индукционного тока и оценить самоиндукцию…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/physics/phys-induction/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Электромагнитная индукция: закон Фарадея, правило Ленца, самоиндукция — теория для ЕГЭ и ОГЭ | Физика | Клетка">
+  <meta property="og:description" content="Электромагнитная индукция: закон Фарадея, правило Ленца, самоиндукция — Как найти ЭДС индукции по изменению магнитного потока, определить направление индукционного тока и оценить самоиндукцию…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/physics/phys-induction/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/physics">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/physics/phys-induction/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/physics/">Физика</a><span aria-hidden="true">/</span><span aria-current="page">Электромагнитная индукция: закон Фарадея, правило Ленца, самоиндукция</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Физика · тема 17 из 19 · ОГЭ № 15 · ЕГЭ № 15–16</span><h1>Электромагнитная индукция: закон Фарадея, правило Ленца, самоиндукция</h1><p class="topic-summary">Как найти ЭДС индукции по изменению магнитного потока, определить направление индукционного тока и оценить самоиндукцию катушки.</p>
+      <div class="topic-meta"><span class="chip">16 мин чтения</span><span class="chip ink">ЕГЭ</span><span class="chip ink">ОГЭ</span><span class="chip">17 заданий</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Магнитный поток $\Phi = BS\cos\alpha$, единица — вебер (Вб), $\alpha$ — угол между $\vec B$ и нормалью к контуру</li><li>Закон Фарадея: $\mathcal{E}_i = -N\dfrac{\Delta\Phi}{\Delta t}$; в модуле — скорость изменения потока</li><li>Проводник в поле: $\mathcal{E}_i = Blv\sin\alpha$</li><li>Правило Ленца: индукционный ток создаёт поле, которое противодействует изменению потока</li><li>Самоиндукция: $\mathcal{E}_{si} = -L\dfrac{\Delta I}{\Delta t}$; энергия катушки $W = \dfrac{LI^2}{2}$</li><li>Заряд, протёкший по контуру: $q = \dfrac{|\Delta\Phi|}{R}$</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Магнитный поток</h2><p>Магнитный поток характеризует, сколько линий магнитной индукции пронизывает контур. Он зависит от индукции поля, площади контура и от его ориентации.</p>
+<div class="rule">$$\Phi = BS\cos\alpha, \qquad [\Phi] = \text{Вб} = \text{Тл}\cdot\text{м}^2$$ $\alpha$ — угол между вектором $\vec B$ и <b>нормалью</b> к плоскости контура. Когда $\vec B$ перпендикулярно плоскости, $\alpha = 0$ и поток наибольший; когда $\vec B$ лежит в плоскости, $\Phi = 0$.</div>
+<div class="trap">Угол в формуле — между $\vec B$ и <i>перпендикуляром</i> к рамке, а не между $\vec B$ и рамкой. Если в условии дан угол между линиями поля и плоскостью $\beta$, то $\alpha = 90^\circ - \beta$ и в формуле окажется $\sin\beta$.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Контур площадью 0,2 м² расположен перпендикулярно линиям поля с индукцией 0,5 Тл. Чему равен магнитный поток (в Вб)?</summary><p>Ответ: <b>0.1</b></p></details>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Закон электромагнитной индукции</h2><p>Если магнитный поток через замкнутый контур меняется, в нём возникает ЭДС индукции, а значит, и ток. Причина не важна: поле может ослабевать, контур — поворачиваться или деформироваться.</p>
+<div class="rule">$$\mathcal{E}_i = -N\dfrac{\Delta\Phi}{\Delta t}, \qquad |\mathcal{E}_i| = N\dfrac{|\Delta\Phi|}{\Delta t}$$ ЭДС определяется <b>скоростью</b> изменения потока, а не самим потоком: большой, но постоянный поток ЭДС не создаёт. Для проводника длиной $l$, движущегося в поле со скоростью $v$: $\mathcal{E}_i = Blv\sin\alpha$.</div>
+<div class="example"><p><b>Пример.</b> Катушка из 100 витков, поток через каждый виток равномерно вырос с 0,02 до 0,08 Вб за 0,3 с. $|\mathcal{E}_i| = 100\cdot\dfrac{0{,}06}{0{,}3} = 20$ В.</p></div>
+<p>На графике $\Phi(t)$ ЭДС пропорциональна <b>наклону</b> графика: горизонтальный участок — $\mathcal{E}_i = 0$, круче наклон — больше $|\mathcal{E}_i|$.</p>
+<div class="trap">Не забывайте число витков $N$ у катушки. А заряд, протёкший по контуру, вообще не зависит от времени изменения: $q = \dfrac{|\Delta\Phi|}{R}$.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Магнитный поток через контур из одного витка за 0,2 с равномерно изменился на 0,06 Вб. Чему равна ЭДС индукции (в В)?</summary><p>Ответ: <b>0.3</b></p></details>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Правило Ленца</h2><p>Направление индукционного тока определяют по правилу Ленца.</p>
+<div class="rule"><b>Индукционный ток направлен так, что создаваемое им магнитное поле противодействует изменению магнитного потока, вызвавшему этот ток.</b> Поток растёт — поле тока направлено против внешнего поля; поток убывает — по внешнему полю.</div>
+<p>Алгоритм: 1) в какую сторону направлено внешнее поле $\vec B$; 2) растёт или убывает поток; 3) куда должно быть направлено поле индукционного тока $\vec B'$ (против $\vec B$ при росте, вдоль $\vec B$ при убывании); 4) по правилу буравчика (правой руки) найти направление тока.</p>
+<div class="example"><p><b>Пример.</b> К катушке приближают магнит северным полюсом. Поток растёт, поле тока направлено против поля магнита, значит, ближний к магниту торец катушки становится северным полюсом и <i>отталкивает</i> магнит. Когда магнит удаляют, торец становится южным и притягивает магнит. Катушка «сопротивляется» любому движению магнита — это следствие закона сохранения энергии.</p></div>
+<div class="trap">«Противодействует» не значит «направлено против внешнего поля» всегда. Если внешний поток <i>уменьшается</i>, индукционное поле направлено в ту же сторону, чтобы поддержать поток.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Магнит северным полюсом вдвигают в катушку. Катушка магнит притягивает или отталкивает?</summary><p>Ответ: <b>отталкивает</b></p></details>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Самоиндукция и индуктивность</h2><p>Ток в катушке создаёт собственный магнитный поток $\Phi = LI$, где $L$ — <b>индуктивность</b> (единица — генри, Гн). Меняется ток — меняется поток — возникает ЭДС <b>самоиндукции</b>, препятствующая изменению тока.</p>
+<div class="rule">$$\mathcal{E}_{si} = -L\dfrac{\Delta I}{\Delta t}, \qquad W = \dfrac{LI^2}{2}$$ Индуктивность зависит от числа витков, размеров катушки и сердечника, но не от тока.</div>
+<p>Из-за самоиндукции ток в цепи с катушкой при замыкании нарастает постепенно, а при размыкании — не пропадает мгновенно (искра на контактах). Катушка — «инерция» электрических цепей.</p>
+<div class="trap">ЭДС самоиндукции определяется <i>скоростью изменения тока</i>, а не самим током. Постоянный ток $\mathcal{E}_{si} = 0$, даже если он большой (только не забывайте: энергия $LI^2/2$ при этом запасена).</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Индуктивность катушки 0,4 Гн, ток в ней 5 А. Какова энергия магнитного поля (в Дж)?</summary><p>Ответ: <b>5</b></p></details></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 17 заданий для ЕГЭ и ОГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 2, повышенный — 12, высокий — 3. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/physics/phys-induction/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/physics">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/physics/phys-dc-circuits/">← Цепи постоянного тока: закон Ома, соединения, мощность</a><a class="btn primary" href="/s/physics/phys-nuclear/">Ядро: радиоактивный распад, период полураспада, дефект массы →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

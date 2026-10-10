@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Электростатика: закон Кулона, поле, потенциал, конденсатор — теория для ОГЭ и ЕГЭ | Физика | Клетка</title>
+  <meta name="description" content="Электростатика: закон Кулона, поле, потенциал, конденсатор — Как считать силу взаимодействия зарядов, напряжённость и разность потенциалов и что происходит с конденсатором при изменении его…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/physics/phys-electrostatics/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Электростатика: закон Кулона, поле, потенциал, конденсатор — теория для ОГЭ и ЕГЭ | Физика | Клетка">
+  <meta property="og:description" content="Электростатика: закон Кулона, поле, потенциал, конденсатор — Как считать силу взаимодействия зарядов, напряжённость и разность потенциалов и что происходит с конденсатором при изменении его…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/physics/phys-electrostatics/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/physics">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/physics/phys-electrostatics/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/physics/">Физика</a><span aria-hidden="true">/</span><span aria-current="page">Электростатика: закон Кулона, поле, потенциал, конденсатор</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Физика · тема 15 из 19 · ОГЭ № 10, 12 · ЕГЭ № 12–13</span><h1>Электростатика: закон Кулона, поле, потенциал, конденсатор</h1><p class="topic-summary">Как считать силу взаимодействия зарядов, напряжённость и разность потенциалов и что происходит с конденсатором при изменении его параметров.</p>
+      <div class="topic-meta"><span class="chip">18 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">17 заданий</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Закон Кулона: $F = k\dfrac{|q_1||q_2|}{r^2}$, $k = 9\cdot 10^9\ \text{Н}\cdot\text{м}^2/\text{Кл}^2$</li><li>Напряжённость: $\vec E = \dfrac{\vec F}{q}$; у точечного заряда $E = k\dfrac{|Q|}{r^2}$; поля складываются векторно</li><li>Силовые линии начинаются на «+», заканчиваются на «−» и не пересекаются</li><li>Работа поля: $A = q(\varphi_1 - \varphi_2) = qU$; в однородном поле $U = Ed$</li><li>Конденсатор: $C = \dfrac{q}{U}$, $C = \dfrac{\varepsilon\varepsilon_0S}{d}$, $W = \dfrac{CU^2}{2} = \dfrac{q^2}{2C}$</li><li>Отключён от источника — $q = \text{const}$; подключён — $U = \text{const}$</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Закон Кулона</h2><p>Заряды бывают двух знаков: одноимённые отталкиваются, разноимённые притягиваются. Сила взаимодействия <b>точечных</b> зарядов (или заряженных шаров, если расстояние много больше их размеров) вычисляется по закону Кулона.</p>
+<div class="rule">$$F = k\dfrac{|q_1||q_2|}{r^2}, \qquad k = 9\cdot 10^9\ \dfrac{\text{Н}\cdot\text{м}^2}{\text{Кл}^2}$$ Силы, с которыми заряды действуют друг на друга, равны по модулю и направлены вдоль прямой, соединяющей заряды (третий закон Ньютона).</div>
+<div class="example"><p><b>Пример.</b> Два заряда по 1 мкКл на расстоянии 30 см: $F = 9\cdot 10^9\cdot\dfrac{10^{-6}\cdot 10^{-6}}{0{,}3^2} = 0{,}1$ Н.</p></div>
+<div class="trap">Заряды в условии почти всегда даны в мкКл или нКл, расстояния — в см. Переведите их в Кл и м (1 мкКл $= 10^{-6}$ Кл, 1 нКл $= 10^{-9}$ Кл), иначе ответ окажется неверным на порядки. Знак заряда влияет только на направление силы, но не на модуль.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Расстояние между зарядами увеличили в 2 раза. Во сколько раз уменьшилась сила взаимодействия?</summary><p>Ответ: <b>4</b></p></details>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Напряжённость и силовые линии</h2><p>Заряд создаёт вокруг себя электрическое поле. Его силовая характеристика — <b>напряжённость</b>: сила, действующая на единичный положительный пробный заряд.</p>
+<div class="rule">$$\vec E = \dfrac{\vec F}{q} \quad\Rightarrow\quad \vec F = q\vec E \qquad E_{\text{точ}} = k\dfrac{|Q|}{r^2}$$ Направление $\vec E$ — направление силы, действующей на <i>положительный</i> заряд. На отрицательный заряд сила направлена противоположно $\vec E$.</div>
+<p><b>Принцип суперпозиции:</b> напряжённость поля нескольких зарядов равна векторной сумме напряжённостей от каждого заряда. Силовые линии выходят из «+», входят в «−», не пересекаются; там, где они гуще, поле сильнее.</p>
+<div class="trap">Складывать нужно <i>векторы</i>, а не модули. В точке посередине между зарядами $+q$ и $-q$ поля направлены одинаково (от «+» к «−») и складываются, а между двумя одинаковыми зарядами — противоположно и вычитаются (в середине $E = 0$).</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Заряд 2 мкКл находится в поле напряжённостью 5000 В/м. Чему равна сила (в мН)?</summary><p>Ответ: <b>10</b></p></details>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Потенциал и напряжение</h2><p><b>Потенциал</b> $\varphi$ — энергетическая характеристика поля: $\varphi = \dfrac{W_п}{q}$. У точечного заряда $\varphi = k\dfrac{Q}{r}$, он убывает с расстоянием медленнее, чем напряжённость.</p>
+<div class="rule">Работа поля при перемещении заряда: $A = q(\varphi_1 - \varphi_2) = qU$. В однородном поле (между пластинами): $$U = Ed, \qquad E = \dfrac{U}{d}$$ где $d$ — расстояние вдоль линии поля.</div>
+<div class="example"><p><b>Пример.</b> Расстояние между пластинами 2 см, поле 5000 В/м: $U = 5000\cdot 0{,}02 = 100$ В. Электрон, пролетевший этот путь, приобретает энергию $eU = 100$ эВ.</p></div>
+<div class="trap">Напряжённость — вектор, потенциал — скаляр (просто число со знаком). Поэтому потенциалы складывают арифметически, а напряжённости — векторно. Поле может быть нулём там, где потенциал не нуль, и наоборот.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Между пластинами на расстоянии 2 см однородное поле напряжённостью 5000 В/м. Чему равно напряжение (в В)?</summary><p>Ответ: <b>100</b></p></details>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Конденсатор</h2><p>Конденсатор — две проводящие пластины, разделённые диэлектриком. Его основная характеристика — <b>электроёмкость</b> $C = \dfrac{q}{U}$ (единица — фарад). У плоского конденсатора она определяется геометрией.</p>
+<div class="rule">$$C = \dfrac{\varepsilon\varepsilon_0 S}{d}, \qquad W = \dfrac{CU^2}{2} = \dfrac{qU}{2} = \dfrac{q^2}{2C}$$ Ёмкость растёт при увеличении площади $S$, уменьшении зазора $d$ и внесении диэлектрика ($\varepsilon > 1$). От заряда и напряжения ёмкость <b>не зависит</b>.</div>
+<p>Задачи «как изменится» решают по схеме: что осталось постоянным?</p>
+<table class="tbl"><tr><th>Случай</th><th>Постоянно</th><th>Как найти остальное</th></tr>
+<tr><td>Конденсатор подключён к источнику</td><td>$U$</td><td>$C$ меняется → $q = CU$, $E = U/d$, $W = CU^2/2$</td></tr>
+<tr><td>Конденсатор отключён от источника</td><td>$q$</td><td>$C$ меняется → $U = q/C$, $W = q^2/2C$; $E$ от $d$ не зависит</td></tr></table>
+<div class="trap">Если раздвинуть пластины отключённого конденсатора, его энергия <b>увеличится</b> (внешняя сила совершает работу против притяжения пластин), а не уменьшится, хотя ёмкость упала.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Ёмкость конденсатора 2 мкФ, напряжение 100 В. Чему равен заряд (в мкКл)?</summary><p>Ответ: <b>200</b></p></details></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 17 заданий для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 5, повышенный — 9, высокий — 3. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/physics/phys-electrostatics/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/physics">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/physics/phys-humidity/">← Влажность воздуха, насыщенный пар и кипение</a><a class="btn primary" href="/s/physics/phys-dc-circuits/">Цепи постоянного тока: закон Ома, соединения, мощность →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

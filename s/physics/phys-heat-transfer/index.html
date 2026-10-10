@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Теплота: нагрев, плавление, кипение и тепловой баланс — теория для ОГЭ и ЕГЭ | Физика | Клетка</title>
+  <meta name="description" content="Теплота: нагрев, плавление, кипение и тепловой баланс — Как считать количество теплоты при нагревании, плавлении и парообразовании и решать задачи на смешивание веществ по уравнению теплового…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/physics/phys-heat-transfer/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Теплота: нагрев, плавление, кипение и тепловой баланс — теория для ОГЭ и ЕГЭ | Физика | Клетка">
+  <meta property="og:description" content="Теплота: нагрев, плавление, кипение и тепловой баланс — Как считать количество теплоты при нагревании, плавлении и парообразовании и решать задачи на смешивание веществ по уравнению теплового…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/physics/phys-heat-transfer/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/physics">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/physics/phys-heat-transfer/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/physics/">Физика</a><span aria-hidden="true">/</span><span aria-current="page">Теплота: нагрев, плавление, кипение и тепловой баланс</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Физика · тема 13 из 19 · ОГЭ № 8–9, 22 · ЕГЭ № 9, 25–26</span><h1>Теплота: нагрев, плавление, кипение и тепловой баланс</h1><p class="topic-summary">Как считать количество теплоты при нагревании, плавлении и парообразовании и решать задачи на смешивание веществ по уравнению теплового баланса.</p>
+      <div class="topic-meta"><span class="chip">16 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">22 задания</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Нагрев и охлаждение: $Q = cm(t_2 - t_1)$</li><li>Плавление и кристаллизация: $Q = \lambda m$; парообразование и конденсация: $Q = Lm$ — температура при этом не меняется</li><li>Сгорание топлива: $Q = qm$; КПД $\eta = \dfrac{Q_{\text{полезная}}}{Q_{\text{затраченная}}}\cdot 100\%$</li><li>Тепловой баланс: $Q_{\text{отд}} = Q_{\text{пол}}$ (если потерь нет)</li><li>Табличные значения: $c_{\text{воды}} = 4200$, $c_{\text{льда}} = 2100$ Дж/(кг·°С), $\lambda_{\text{льда}} = 3{,}3\cdot 10^5$ Дж/кг, $L_{\text{воды}} = 2{,}3\cdot 10^6$ Дж/кг</li><li>Перед расчётом переведите граммы в килограммы</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Нагревание и охлаждение</h2><p>Чтобы нагреть тело, ему нужно передать энергию. <b>Удельная теплоёмкость</b> $c$ — это теплота, необходимая, чтобы нагреть 1 кг вещества на 1 °С.</p>
+<div class="rule">$$Q = cm(t_2 - t_1)$$ При нагревании $Q > 0$ (тело получает теплоту), при охлаждении $Q < 0$ (отдаёт). Для расчёта отданной теплоты берут модуль: $Q_{\text{отд}} = cm(t_1 - t_2)$.</div>
+<p>У воды теплоёмкость очень большая — 4200 Дж/(кг·°С): поэтому вода медленно нагревается и медленно остывает, а металлы (сталь — 500, медь — 400) нагреваются быстро.</p>
+<div class="trap">Масса — только в килограммах! 200 г = 0,2 кг. Разность температур $\Delta t$ в градусах Цельсия и в кельвинах одна и та же, а вот сами $t$ и $T$ различаются на 273.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Сколько теплоты (в Дж) нужно, чтобы нагреть 0,5 кг воды на 20 °С?</summary><p>Ответ: <b>42000</b></p></details>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Плавление, кипение и график нагревания</h2><p>Пока вещество плавится или кипит, подводимая теплота идёт на разрушение связей между частицами, а <b>температура остаётся постоянной</b> — на графике это горизонтальный участок.</p>
+<div class="rule">Плавление (и кристаллизация): $Q = \lambda m$. Парообразование (и конденсация): $Q = Lm$. Здесь $\lambda$ и $L$ — удельные теплоты, Дж/кг.</div>
+<div class="example"><p><b>Пример.</b> Сколько теплоты нужно, чтобы 1 кг льда при $-10\ ^\circ$С превратить в воду при $0\ ^\circ$С? Сначала нагрев льда: $2100\cdot 1\cdot 10 = 21\,000$ Дж, потом плавление: $3{,}3\cdot 10^5\cdot 1 = 330\,000$ Дж. Итого 351 кДж.</p></div>
+<div class="trap">Нельзя считать «одной формулой» весь путь от льда до пара. Каждый участок графика — своя формула: $cm\Delta t$ на наклонных участках и $\lambda m$ или $Lm$ на горизонтальных.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Сколько теплоты (в Дж) нужно, чтобы расплавить 2 кг льда при 0 °С? $\lambda = 3{,}3\cdot 10^5$ Дж/кг.</summary><p>Ответ: <b>660000</b></p></details>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Уравнение теплового баланса</h2><p>Если тела обмениваются теплотой только друг с другом (в теплоизолированном сосуде), то сколько теплоты отдали горячие, столько же получили холодные.</p>
+<div class="rule">$$Q_{\text{отд}} = Q_{\text{пол}} \qquad c_1m_1(t_1 - t) = c_2m_2(t - t_2)$$ Здесь $t$ — установившаяся температура, $t_1 > t > t_2$.</div>
+<p>Для двух порций воды $c$ сокращается, и температура смеси — среднее, «взвешенное» по массам: $t = \dfrac{m_1t_1 + m_2t_2}{m_1 + m_2}$.</p>
+<div class="example"><p><b>Пример.</b> Стальную деталь (4,2 кг, 100 °С) опустили в 0,5 кг воды при 20 °С. $c_ст = 500$. Пусть $t$ — итоговая температура. $500\cdot 4{,}2\,(100 - t) = 4200\cdot 0{,}5\,(t - 20)$, то есть $2100(100 - t) = 2100(t - 20)$. Отсюда $t = 60\ ^\circ$С.</p></div>
+<div class="trap">Если в смеси есть лёд или пар, итоговая температура может оказаться ровно 0 °С или 100 °С — часть вещества не успеет расплавиться. Сначала проверьте, хватает ли теплоты для плавления всего льда, и только потом решайте уравнение.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Смешали 2 кг воды при 90 °С и 2 кг воды при 10 °С. Какой станет температура (в °С)?</summary><p>Ответ: <b>50</b></p></details>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Топливо, нагреватели и КПД</h2><p>При сгорании топлива выделяется $Q = qm$, где $q$ — удельная теплота сгорания (Дж/кг). У электронагревателя теплота равна работе тока: $Q = Pt$.</p>
+<div class="rule">$$\eta = \dfrac{Q_{\text{полезная}}}{Q_{\text{затраченная}}}\cdot 100\%$$ Полезная теплота — та, что пошла на нагрев (воды, детали), затраченная — вся выделившаяся: $qm$ или $Pt$.</div>
+<div class="example"><p><b>Пример.</b> Чайник мощностью 2100 Вт с КПД 80 % нагревает 1 кг воды от 20 до 100 °С. Полезная теплота: $4200\cdot 1\cdot 80 = 336\,000$ Дж. Затраченная: $Pt$. Из $\eta = 0{,}8$ получаем $Pt = 420\,000$ Дж, $t = 200$ с.</p></div>
+<div class="trap">КПД всегда меньше 100 %. Если получилось больше — вы перепутали числитель и знаменатель.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Нагреватель получил 500 Дж, из них на полезную работу пошло 200 Дж. Найдите КПД в процентах.</summary><p>Ответ: <b>40</b></p></details></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 22 задания для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 7, повышенный — 10, высокий — 5. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/physics/phys-heat-transfer/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/physics">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/physics/phys-vectors/">← Векторы, проекции и сложение сил</a><a class="btn primary" href="/s/physics/phys-humidity/">Влажность воздуха, насыщенный пар и кипение →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

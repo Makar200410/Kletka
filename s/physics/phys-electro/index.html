@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Электростатика и постоянный ток — теория для ОГЭ и ЕГЭ | Физика | Клетка</title>
+  <meta name="description" content="Электростатика и постоянный ток — Заряды и поле, конденсатор, закон Ома, соединения проводников, работа и мощность тока — один из самых «баллоёмких» разделов обоих экзаменов. Теория для ОГЭ и ЕГЭ по…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/physics/phys-electro/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Электростатика и постоянный ток — теория для ОГЭ и ЕГЭ | Физика | Клетка">
+  <meta property="og:description" content="Электростатика и постоянный ток — Заряды и поле, конденсатор, закон Ома, соединения проводников, работа и мощность тока — один из самых «баллоёмких» разделов обоих экзаменов. Теория для ОГЭ и ЕГЭ по…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/physics/phys-electro/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/physics">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/physics/phys-electro/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/physics/">Физика</a><span aria-hidden="true">/</span><span aria-current="page">Электростатика и постоянный ток</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Физика · тема 6 из 19 · ОГЭ № 1–3, 9–11, 17, 20–22 · ЕГЭ № 11, 14–15, 22–26</span><h1>Электростатика и постоянный ток</h1><p class="topic-summary">Заряды и поле, конденсатор, закон Ома, соединения проводников, работа и мощность тока — один из самых «баллоёмких» разделов обоих экзаменов.</p>
+      <div class="topic-meta"><span class="chip">35 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">22 задания</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Закон Кулона: $F = k\dfrac{|q_1||q_2|}{r^2}$, $k = 9\cdot 10^9$ Н·м²/Кл²</li><li>Конденсатор: $C = \dfrac{q}{U}$, $C = \dfrac{\varepsilon\varepsilon_0 S}{d}$, $W = \dfrac{CU^2}{2}$</li><li>Закон Ома: $I = \dfrac{U}{R}$; полная цепь $I = \dfrac{\mathcal{E}}{R + r}$</li><li>$R = \rho\dfrac{l}{S}$</li><li>Последовательно: $R = R_1 + R_2$; параллельно: $\dfrac{1}{R} = \dfrac{1}{R_1} + \dfrac{1}{R_2}$</li><li>$P = UI = I^2R = \dfrac{U^2}{R}$; Джоуль — Ленц $Q = I^2Rt$</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Заряды и электрическое поле</h2><p>Электрический заряд бывает двух знаков; одноимённые заряды отталкиваются, разноимённые притягиваются. Заряд дискретен: он кратен элементарному $e = 1{,}6\cdot 10^{-19}$ Кл. В замкнутой системе алгебраическая сумма зарядов сохраняется.</p>
+<div class="rule">Закон Кулона: $$F = k\dfrac{|q_1|\,|q_2|}{\varepsilon r^2}, \qquad k = 9\cdot 10^9\ \dfrac{\text{Н}\cdot\text{м}^2}{\text{Кл}^2}$$</div>
+<p><b>Напряжённость</b> поля $\vec E = \vec F/q$ (Н/Кл = В/м). Поле точечного заряда: $E = k\dfrac{|q|}{r^2}$ — убывает как квадрат расстояния. В однородном поле напряжение и напряжённость связаны: $U = Ed$.</p>
+<div class="tip">Если два одинаковых металлических шарика соприкоснулись, заряд делится поровну: $q = \dfrac{q_1 + q_2}{2}$ (с учётом знаков!). Заряды $+6$ и $-2$ нКл после касания дадут по $+2$ нКл.</div>
+<p><b>Проводник в поле</b>: заряды перераспределяются так, что поле внутри проводника становится равным нулю, а весь избыточный заряд находится на поверхности.</p>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Конденсатор</h2><p>Конденсатор — две проводящие обкладки, разделённые диэлектриком. Он накапливает заряд и энергию.</p>
+<div class="rule">$$C = \dfrac{q}{U} \qquad C = \dfrac{\varepsilon\varepsilon_0 S}{d} \qquad W = \dfrac{CU^2}{2} = \dfrac{qU}{2} = \dfrac{q^2}{2C}$$</div>
+<p>Ёмкость измеряется в фарадах (Ф) и зависит только от устройства конденсатора: площади пластин $S$, расстояния $d$ и диэлектрика $\varepsilon$.</p>
+<div class="trap">Задачи «как изменится» про конденсатор: сначала выясните, что постоянно. Если конденсатор <b>отключён</b> от источника — неизменен заряд $q$. Если <b>подключён</b> — неизменно напряжение $U$. Раздвинули пластины отключённого конденсатора: $C$ уменьшилась, $q$ та же, значит $U = q/C$ выросло.</div>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Закон Ома и соединения проводников</h2><p><b>Сила тока</b> $I = \dfrac{q}{t}$ (А). <b>Закон Ома для участка цепи</b>: $I = \dfrac{U}{R}$. Сопротивление проводника: $R = \rho\dfrac{l}{S}$, где $\rho$ — удельное сопротивление (в задачах ОГЭ часто в Ом·мм²/м — тогда площадь можно подставлять в мм²).</p>
+<table class="tbl">
+<tr><th></th><th>Последовательно</th><th>Параллельно</th></tr>
+<tr><td>Ток</td><td>$I = I_1 = I_2$</td><td>$I = I_1 + I_2$</td></tr>
+<tr><td>Напряжение</td><td>$U = U_1 + U_2$</td><td>$U = U_1 = U_2$</td></tr>
+<tr><td>Сопротивление</td><td>$R = R_1 + R_2$</td><td>$\dfrac{1}{R} = \dfrac{1}{R_1} + \dfrac{1}{R_2}$</td></tr>
+</table>
+<div class="tip">Два параллельных резистора: $R = \dfrac{R_1R_2}{R_1 + R_2}$. $n$ одинаковых резисторов $R_0$ параллельно: $R = R_0/n$. Общее сопротивление параллельного соединения всегда меньше наименьшего.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Резисторы 6 Ом и 3 Ом соединены параллельно. Чему равно их общее сопротивление (в омах)?</summary><p>Ответ: <b>2</b></p></details>
+<p><b>Закон Ома для полной цепи</b>: источник с ЭДС $\mathcal{E}$ и внутренним сопротивлением $r$ даёт ток $I = \dfrac{\mathcal{E}}{R + r}$. Напряжение на внешней цепи $U = \mathcal{E} - Ir$. При коротком замыкании $I_{кз} = \mathcal{E}/r$.</p><figure class="viz"><svg viewBox="0 0 560 245" role="img" aria-label="Соединения проводников" xmlns="http://www.w3.org/2000/svg"><path d="M30 60 H78 M122 60 H158 M202 60 H250 V170 H142 M130 170 H30 V60" class="c5"/><rect x="78" y="51" width="44" height="18" rx="2" class="c1 fs"/><rect x="158" y="51" width="44" height="18" rx="2" class="c1 fs"/><line x1="130" y1="156" x2="130" y2="184" class="c5"/><line x1="142" y1="162" x2="142" y2="178" class="c5 wide"/><text x="100" y="45" class="t tb ti" text-anchor="middle">R₁</text><text x="180" y="45" class="t tb ti" text-anchor="middle">R₂</text><text x="140" y="205" class="ts" text-anchor="middle">ток I одинаков</text><text x="140" y="230" class="t tb tr" text-anchor="middle">R = R₁ + R₂</text><path d="M310 100 H360 M360 70 V130 M360 70 H398 M442 70 H480 M360 130 H398 M442 130 H480 M480 70 V130 M480 100 H530 V170 H422 M410 170 H310 V100" class="c5"/><rect x="398" y="61" width="44" height="18" rx="2" class="c1 fs"/><rect x="398" y="121" width="44" height="18" rx="2" class="c1 fs"/><line x1="410" y1="156" x2="410" y2="184" class="c5"/><line x1="422" y1="162" x2="422" y2="178" class="c5 wide"/><circle cx="360" cy="100" r="3.5" class="p5"/><circle cx="480" cy="100" r="3.5" class="p5"/><text x="420" y="55" class="t tb ti" text-anchor="middle">R₁</text><text x="420" y="115" class="t tb ti" text-anchor="middle">R₂</text><text x="420" y="205" class="ts" text-anchor="middle">напряжение U одинаково</text><text x="420" y="230" class="t tb tr" text-anchor="middle">1/R = 1/R₁ + 1/R₂</text></svg><figcaption><b>Рис. 1.</b> Последовательное и параллельное соединение проводников</figcaption></figure>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Работа и мощность тока</h2><div class="rule">$$A = UIt \qquad P = UI = I^2R = \dfrac{U^2}{R} \qquad Q = I^2Rt$$</div>
+<p>Последняя формула — закон Джоуля — Ленца: количество теплоты, выделяемое проводником с током.</p>
+<p>Какую формулу мощности выбрать? При <b>последовательном</b> соединении ток общий — удобна $P = I^2R$: больше мощность у большего сопротивления. При <b>параллельном</b> общее напряжение — удобна $P = U^2/R$: больше мощность у меньшего сопротивления.</p>
+<div class="example"><p><b>Пример.</b> Какое сопротивление нагрузки нужно подключить к источнику $\mathcal{E} = 12$ В, $r = 2$ Ом, чтобы мощность во внешней цепи была наибольшей?</p>
+<p>$P = I^2R = \dfrac{\mathcal{E}^2R}{(R + r)^2}$. Максимум достигается при $R = r = 2$ Ом, тогда $P_{max} = \dfrac{\mathcal{E}^2}{4r} = \dfrac{144}{8} = 18$ Вт.</p></div>
+<div class="trap">1 кВт·ч — единица энергии, а не мощности: $1\ \text{кВт}\cdot\text{ч} = 1000\ \text{Вт}\cdot 3600\ \text{с} = 3{,}6\cdot 10^6$ Дж.</div></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 22 задания для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 9, повышенный — 9, высокий — 4. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/physics/phys-electro/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/physics">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/physics/phys-thermo/">← Молекулярная физика и термодинамика</a><a class="btn primary" href="/s/physics/phys-magnetism/">Магнетизм и электромагнитная индукция →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

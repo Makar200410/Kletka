@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Файловая система, маски и чтение файлов — теория для ОГЭ и ЕГЭ | Информатика | Клетка</title>
+  <meta name="description" content="Файловая система, маски и чтение файлов — Как устроено дерево каталогов, как записывать путь к файлу, что означают ? и * в маске и как прочитать числа из файла программой на Python. Теория для ОГЭ и…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/informatics/inf-filesystem/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Файловая система, маски и чтение файлов — теория для ОГЭ и ЕГЭ | Информатика | Клетка">
+  <meta property="og:description" content="Файловая система, маски и чтение файлов — Как устроено дерево каталогов, как записывать путь к файлу, что означают ? и * в маске и как прочитать числа из файла программой на Python. Теория для ОГЭ и…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/informatics/inf-filesystem/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/informatics">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/informatics/inf-filesystem/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/informatics/">Информатика</a><span aria-hidden="true">/</span><span aria-current="page">Файловая система, маски и чтение файлов</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Информатика · тема 11 из 13 · ОГЭ № 4, 11 · ЕГЭ № 17</span><h1>Файловая система, маски и чтение файлов</h1><p class="topic-summary">Как устроено дерево каталогов, как записывать путь к файлу, что означают ? и * в маске и как прочитать числа из файла программой на Python.</p>
+      <div class="topic-meta"><span class="chip">14 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">17 заданий</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Файловая система — дерево: корень (диск), каталоги и файлы; у каждого файла один полный путь</li><li>Полный путь: C:\Школа\Физика\задачи.txt; «..» — на уровень вверх, «.» — текущий каталог</li><li>Маска: ? — ровно один любой символ; * — любая последовательность символов (в том числе пустая)</li><li>Поиск по таблице файлов: проверяйте все условия сразу — расширение, размер, дату</li><li>Python: open(имя), read().split() или цикл for line in f; преобразуйте строки в числа функцией int()</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Дерево каталогов и путь к файлу</h2><p>Файлы хранятся в <b>каталогах</b> (папках), а каталоги вложены друг в друга. Начало дерева — <b>корневой каталог</b> диска (<code>C:\</code>). Такая структура называется <b>деревом</b>: у каждого файла ровно один родительский каталог.</p>
+<div class="rule"><b>Полный путь</b> — цепочка каталогов от корня до файла через обратную косую черту: <code>C:\Школа\Физика\задачи.txt</code>. Имя файла состоит из <b>имени</b> и <b>расширения</b> (после последней точки), например <code>задачи</code> и <code>txt</code>.</div>
+<p>Для перемещения используют <code>..</code> — «подняться на один уровень вверх» (в родительский каталог). Из <code>C:\Школа\Физика</code> путь <code>..\Химия</code> ведёт в <code>C:\Школа\Химия</code>.</p>
+<details class="static-quick"><summary><b>Проверь себя.</b> Вы находитесь в C:\Школа\Физика. Выполните команду «подняться на уровень вверх». В каком каталоге вы окажетесь?</summary><p>Ответ: <b>C:\Школа</b></p></details><figure class="viz"><svg viewBox="0 0 560 235" role="img" aria-label="Дерево каталогов" xmlns="http://www.w3.org/2000/svg"><line x1="280" y1="43" x2="170" y2="72" class="c5 thin"/><line x1="280" y1="43" x2="430" y2="72" class="c5 thin"/><line x1="170" y1="98" x2="90" y2="132" class="c5 thin"/><line x1="170" y1="98" x2="250" y2="132" class="c5 thin"/><line x1="90" y1="158" x2="40" y2="192" class="c5 thin"/><line x1="90" y1="158" x2="160" y2="192" class="c5 thin"/><line x1="430" y1="98" x2="430" y2="132" class="c5 thin"/><line x1="430" y1="158" x2="430" y2="192" class="c5 thin"/><rect x="232" y="17" width="96" height="26" rx="4" class="c1 f1"/><text x="280" y="35" class="t" text-anchor="middle">C:\</text><rect x="122" y="72" width="96" height="26" rx="4" class="c5 thin fs"/><text x="170" y="90" class="t" text-anchor="middle">Школа</text><rect x="382" y="72" width="96" height="26" rx="4" class="c5 thin fs"/><text x="430" y="90" class="t" text-anchor="middle">Архив</text><rect x="42" y="132" width="96" height="26" rx="4" class="c5 thin fs"/><text x="90" y="150" class="t" text-anchor="middle">9Б</text><rect x="202" y="132" width="96" height="26" rx="4" class="c5 thin fs"/><text x="250" y="150" class="t" text-anchor="middle">10А</text><rect x="-8" y="192" width="96" height="26" rx="4" class="c5 thin fs"/><text x="40" y="210" class="t" text-anchor="middle">Информатика</text><rect x="112" y="192" width="96" height="26" rx="4" class="c5 thin fs"/><text x="160" y="210" class="t" text-anchor="middle">Химия</text><rect x="382" y="132" width="96" height="26" rx="4" class="c5 thin fs"/><text x="430" y="150" class="t" text-anchor="middle">Отчёты</text><rect x="382" y="192" width="96" height="26" rx="4" class="c4 f4"/><text x="430" y="210" class="t" text-anchor="middle">итог.xlsx</text><text x="310" y="208" class="ts mono">C:\Архив\Отчёты\итог.xlsx</text></svg><figcaption><b>Рис. 1.</b> Дерево каталогов: у каждого файла один родительский каталог; путь — от корня через «\»</figcaption></figure><figure class="viz"><svg viewBox="0 0 560 215" role="img" aria-label="Перемещение по каталогам" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="15" width="170" height="30" rx="4" class="c5 thin f1"/><text x="100" y="35" class="t" text-anchor="middle">старт</text><rect x="215" y="15" width="320" height="30" rx="4" class="c5 thin fs"/><text x="225" y="35" class="t mono">C:\Школа\9Б\Информатика</text><line x1="375" y1="46" x2="375" y2="46" class="c5"/><polygon points="375,52 377.7,46 372.3,46" class="h5"/><rect x="15" y="53" width="170" height="30" rx="4" class="c5 thin f1"/><text x="100" y="73" class="t" text-anchor="middle">.. (вверх)</text><rect x="215" y="53" width="320" height="30" rx="4" class="c5 thin fs"/><text x="225" y="73" class="t mono">C:\Школа\9Б</text><line x1="375" y1="84" x2="375" y2="84" class="c5"/><polygon points="375,90 377.7,84 372.3,84" class="h5"/><rect x="15" y="91" width="170" height="30" rx="4" class="c5 thin f1"/><text x="100" y="111" class="t" text-anchor="middle">вниз: Физика</text><rect x="215" y="91" width="320" height="30" rx="4" class="c5 thin fs"/><text x="225" y="111" class="t mono">C:\Школа\9Б\Физика</text><line x1="375" y1="122" x2="375" y2="122" class="c5"/><polygon points="375,128 377.7,122 372.3,122" class="h5"/><rect x="15" y="129" width="170" height="30" rx="4" class="c5 thin f1"/><text x="100" y="149" class="t" text-anchor="middle">.. (вверх)</text><rect x="215" y="129" width="320" height="30" rx="4" class="c5 thin fs"/><text x="225" y="149" class="t mono">C:\Школа\9Б</text><line x1="375" y1="160" x2="375" y2="160" class="c5"/><polygon points="375,166 377.7,160 372.3,160" class="h5"/><rect x="15" y="167" width="170" height="30" rx="4" class="c5 thin f1"/><text x="100" y="187" class="t" text-anchor="middle">вниз: Химия, Опыты</text><rect x="215" y="167" width="320" height="30" rx="4" class="c5 thin f3"/><text x="225" y="187" class="t mono">C:\Школа\9Б\Химия\Опыты</text></svg><figcaption><b>Рис. 2.</b> Как менять путь: «..» — вверх на уровень, имя каталога — вниз</figcaption></figure>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Маски файлов</h2><p><b>Маска</b> — шаблон имени файла. Два спецсимвола:</p>
+<div class="rule"><code>?</code> — <b>ровно один</b> любой символ.<br><code>*</code> — <b>любая последовательность</b> символов, в том числе <b>пустая</b>.</div>
+<table class="tbl"><tr><th>Маска</th><th>Подходят</th><th>Не подходят</th></tr>
+<tr><td><code>d?ta.txt</code></td><td>data.txt, dota.txt</td><td>dta.txt, date.txt</td></tr>
+<tr><td><code>*.txt</code></td><td>a.txt, abc.txt, .txt</td><td>a.text, a.tx</td></tr>
+<tr><td><code>photo?.jpg</code></td><td>photo1.jpg</td><td>photo.jpg, photo12.jpg</td></tr></table>
+<div class="trap"><b>Ловушка.</b> Звёздочка может заменять и пустую строку: маске <code>data*.txt</code> соответствует файл data.txt. А вот <code>?</code> пустой строкой быть не может.</div><figure class="viz"><svg viewBox="0 0 600 210" role="img" aria-label="Маска файлов" xmlns="http://www.w3.org/2000/svg"><text x="300" y="30" class="big" text-anchor="middle">?a*.t?t</text><text x="40" y="70" class="t mono">data.txt</text><text x="180" y="70" class="t tb tg" text-anchor="middle">✓</text><text x="215" y="70" class="ts">d + a + «ta» + .t + x + t</text><text x="40" y="100" class="t mono">date.txt</text><text x="180" y="100" class="t tb tg" text-anchor="middle">✓</text><text x="215" y="100" class="ts">d + a + «te» + .t + x + t</text><text x="40" y="130" class="t mono">data2.txt</text><text x="180" y="130" class="t tb tg" text-anchor="middle">✓</text><text x="215" y="130" class="ts">звёздочка = «ta2»</text><text x="40" y="160" class="t mono">dat.tt</text><text x="180" y="160" class="t tb tr" text-anchor="middle">✗</text><text x="215" y="160" class="ts">нет символа между «t» и «t»</text><text x="40" y="190" class="t mono">data.text</text><text x="180" y="190" class="t tb tr" text-anchor="middle">✗</text><text x="215" y="190" class="ts">расширение из 4 символов</text></svg><figcaption><b>Рис. 3.</b> Маска ?a*.t?t: один любой символ, затем «a», любая часть, «.t», один любой символ, «t»</figcaption></figure>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Поиск файлов по признакам</h2><p>В заданиях типа ОГЭ-11 файлы описаны таблицей (имя, размер, дата). Нужно применить условие: расширение, размер, год. Читайте условие внимательно: «<b>.doc</b>» — это не «.docx».</p>
+<div class="example"><p><b>Пример.</b> Файлы: report.doc (250 Кб), letter.doc (90 Кб), plan.docx (300 Кб), draft.doc (410 Кб). Условие «расширение .doc и размер &gt; 200 Кб» выберет report.doc и draft.doc — всего 2. plan.docx отсеивается по расширению, letter.doc — по размеру.</p></div>
+<div class="tip">Условия «и» проверяют одновременно — файл должен пройти оба. Условия «или» дают объединение множеств.</div>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Чтение файла в Python (ЕГЭ-17 и другие)</h2><p>В ЕГЭ данные часто лежат в текстовых файлах: числа через пробел или по одному в строке. Стандартный шаблон:</p>
+<pre><code># все числа из файла в список
+with open('data.txt') as f:
+    nums = [int(x) for x in f.read().split()]
+print(max(nums), len(nums))
+
+# построчная обработка: в строке два числа
+s = 0
+for line in open('data.txt'):
+    a, b = map(int, line.split())
+    if a &gt; b:
+        s += a - b
+print(s)</code></pre>
+<div class="rule"><code>f.read()</code> — весь файл одной строкой; <code>split()</code> разрезает по пробелам и переводам строк; <code>int</code> превращает текст в число; цикл <code>for line in f</code> идёт по строкам.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Файл data.txt содержит числа 4 17 9 12 3. Какое число выведет print(max(nums)) после чтения по шаблону выше?</summary><p>Ответ: <b>17</b></p></details><figure class="viz"><svg viewBox="0 0 600 115" role="img" aria-label="Чтение файла" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="30" width="100" height="60" rx="4" class="c1 f1"/><text x="60" y="55" class="t tb" text-anchor="middle">файл</text><text x="60" y="76" class="tn" text-anchor="middle">data.txt</text><line x1="111" y1="60" x2="120" y2="60" class="c5"/><polygon points="127,60 120,56.9 120,63.2" class="h5"/><rect x="128" y="30" width="100" height="60" rx="4" class="c1 f1"/><text x="178" y="55" class="t tb" text-anchor="middle">read()</text><text x="178" y="76" class="tn" text-anchor="middle">"4 17 9"</text><line x1="229" y1="60" x2="238" y2="60" class="c5"/><polygon points="245,60 238,56.9 238,63.2" class="h5"/><rect x="246" y="30" width="100" height="60" rx="4" class="c1 f1"/><text x="296" y="55" class="t tb" text-anchor="middle">split()</text><text x="296" y="76" class="tn" text-anchor="middle">["4","17","9"]</text><line x1="347" y1="60" x2="356" y2="60" class="c5"/><polygon points="363,60 356,56.9 356,63.2" class="h5"/><rect x="364" y="30" width="100" height="60" rx="4" class="c1 f1"/><text x="414" y="55" class="t tb" text-anchor="middle">int</text><text x="414" y="76" class="tn" text-anchor="middle">[4, 17, 9]</text><line x1="465" y1="60" x2="474" y2="60" class="c5"/><polygon points="481,60 474,56.9 474,63.2" class="h5"/><rect x="482" y="30" width="100" height="60" rx="4" class="c1 f3"/><text x="532" y="55" class="t tb" text-anchor="middle">max()</text><text x="532" y="76" class="tn" text-anchor="middle">17</text></svg><figcaption><b>Рис. 4.</b> Цепочка чтения числового файла в Python: текст → слова → числа → результат</figcaption></figure></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 17 заданий для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 6, повышенный — 9, высокий — 2. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/informatics/inf-filesystem/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/informatics">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/informatics/inf-ip/">← IP-адрес, маска и адрес сети</a><a class="btn primary" href="/s/informatics/inf-recursion/">Рекурсивные функции →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Расчёты по уравнению реакции: избыток, выход, примеси — теория для ОГЭ и ЕГЭ | Химия | Клетка</title>
+  <meta name="description" content="Расчёты по уравнению реакции: избыток, выход, примеси — Универсальный алгоритм расчёта по уравнению реакции, а также задачи на избыток и недостаток, выход продукта, примеси и состав раствора после…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/chemistry/chem-calc-equations/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Расчёты по уравнению реакции: избыток, выход, примеси — теория для ОГЭ и ЕГЭ | Химия | Клетка">
+  <meta property="og:description" content="Расчёты по уравнению реакции: избыток, выход, примеси — Универсальный алгоритм расчёта по уравнению реакции, а также задачи на избыток и недостаток, выход продукта, примеси и состав раствора после…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/chemistry/chem-calc-equations/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/chemistry">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/chemistry/chem-calc-equations/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/chemistry/">Химия</a><span aria-hidden="true">/</span><span aria-current="page">Расчёты по уравнению реакции: избыток, выход, примеси</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Химия · тема 15 из 15 · ОГЭ № 22 · ЕГЭ № 28, 34</span><h1>Расчёты по уравнению реакции: избыток, выход, примеси</h1><p class="topic-summary">Универсальный алгоритм расчёта по уравнению реакции, а также задачи на избыток и недостаток, выход продукта, примеси и состав раствора после реакции.</p>
+      <div class="topic-meta"><span class="chip">20 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">21 задание</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Коэффициенты в уравнении показывают отношение количеств веществ (моль), а не масс</li><li>Алгоритм: уравнение → n известного → n искомого по коэффициентам → масса или объём</li><li>Избыток и недостаток: считают n каждого вещества, делят на коэффициент; расчёт ведут по недостатку</li><li>Выход продукта: η = m(практ.) / m(теор.) · 100%</li><li>В реакцию вступает только чистое вещество: m(чист.) = m(смеси) · (1 − ω(примесей))</li><li>Масса раствора после реакции = сумма масс исходных веществ − масса осадка − масса газа</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Базовый алгоритм</h2><ol>
+<li>Запишите <b>уравнение реакции</b> и расставьте коэффициенты.</li>
+<li>Найдите количество вещества <b>известного</b> участника: n = m / M или n = V / 22,4.</li>
+<li>Составьте <b>пропорцию по коэффициентам</b> и найдите n искомого.</li>
+<li>Переведите n в нужную величину: m = n · M, V = n · 22,4.</li>
+</ol>
+<div class="example"><p><b>Пример.</b> Сколько литров водорода (н. у.) выделится при действии соляной кислоты на 6,5 г цинка?<br>Zn + 2HCl → ZnCl<sub>2</sub> + H<sub>2</sub>↑<br>n(Zn) = 6,5 / 65 = 0,1 моль. По коэффициентам n(H<sub>2</sub>) = n(Zn) = 0,1 моль. V(H<sub>2</sub>) = 0,1 · 22,4 = <b>2,24 л</b>.</p></div>
+<div class="rule">Отношение количеств веществ равно отношению коэффициентов: n(A) / a = n(B) / b. <b>Массы</b> веществ так соотносить нельзя — только после перехода к молям.</div>
+<div class="trap">Самая частая ошибка — забыть про коэффициент: например, в 2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O из 1 моль O<sub>2</sub> получается 2 моль воды, а не 1. Уравнение всегда записывайте с коэффициентами до расчёта.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Сколько граммов воды образуется при сгорании 4 г водорода (2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O)?</summary><p>Ответ: <b>36</b></p></details>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Избыток и недостаток</h2><p>Если даны количества <b>двух</b> реагентов, один из них может быть в избытке. Продукта получится столько, сколько позволяет вещество в <b>недостатке</b>.</p>
+<ol>
+<li>Найдите n обоих реагентов.</li>
+<li>Разделите n каждого на его коэффициент в уравнении. Меньшее число — <b>недостаток</b>.</li>
+<li>Расчёт продуктов ведите только по недостатку. Остаток избытка = n(избытка) − n, прореагировавшее с недостатком.</li>
+</ol>
+<div class="example"><p><b>Пример.</b> К 8 г NaOH добавили 3,65 г HCl. Сколько граммов NaCl получилось?<br>NaOH + HCl → NaCl + H<sub>2</sub>O<br>n(NaOH) = 8 / 40 = 0,2 моль; n(HCl) = 3,65 / 36,5 = 0,1 моль. Коэффициенты равны 1, поэтому HCl в недостатке. n(NaCl) = 0,1 моль; m = 0,1 · 58,5 = <b>5,85 г</b>. Останется 0,1 моль NaOH (4 г).</p></div>
+<div class="trap">Нельзя сравнивать массы («8 г больше 3,65 г») — сравнивайте количества вещества с учётом коэффициентов. И ещё: если избыток сам может реагировать с продуктом (например, CO<sub>2</sub> с избытком щёлочи), проверьте состав продукта.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> В примере выше какое из веществ, NaOH или HCl, осталось после реакции?</summary><p>Ответ: <b>NaOH</b></p></details>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Выход продукта и примеси</h2><p>Реально продукта обычно получается меньше, чем по уравнению (потери, обратимость реакции). Отношение практической массы к теоретической — <b>выход</b> η.</p>
+<div class="rule">η = m(практ.) / m(теор.) · 100%<br>Чистое вещество: m(чист.) = m(образца) · (1 − ω(примесей))</div>
+<div class="example"><p><b>Пример 1 (выход).</b> Из 11,2 г железа получили 20,32 г FeCl<sub>2</sub>. Fe + 2HCl → FeCl<sub>2</sub> + H<sub>2</sub>. n(Fe) = 0,2 моль; m(теор.) = 0,2 · 127 = 25,4 г. η = 20,32 / 25,4 = 0,8, то есть <b>80%</b>.</p>
+<p><b>Пример 2 (примеси).</b> Известняк массой 250 г содержит 20% примесей. m(CaCO<sub>3</sub>) = 250 · 0,8 = 200 г = 2 моль. CaCO<sub>3</sub> → CaO + CO<sub>2</sub>, n(CO<sub>2</sub>) = 2 моль, m = 88 г.</p></div>
+<div class="trap">Выход применяют к <b>продукту</b>, а не к исходному веществу. И если задачу просят найти массу исходного вещества по практическому выходу, теоретическую массу продукта находят делением: m(теор.) = m(практ.) / η.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Сколько граммов CO<sub>2</sub> образуется при разложении 200 г чистого CaCO<sub>3</sub>?</summary><p>Ответ: <b>88</b></p></details>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Раствор после реакции</h2><p>В задачах ЕГЭ №34 (и ОГЭ №22) часто просят найти массовую долю вещества в растворе <b>после</b> реакции. Массу нового раствора считают по закону сохранения массы.</p>
+<div class="rule">m(р-ра после реакции) = m(исходного р-ра) + m(добавленного вещества) − m(↓) − m(↑)<br>ω(соли) = m(соли) / m(р-ра после реакции)</div>
+<div class="example"><p><b>Пример.</b> К 100 г 10% раствора NaOH добавили 100 г 7,3% раствора HCl. Найдите ω(NaCl).<br>m(NaOH) = 10 г → 0,25 моль; m(HCl) = 7,3 г → 0,2 моль. HCl в недостатке. n(NaCl) = 0,2 моль; m = 11,7 г. Газа и осадка нет, m(р-ра) = 200 г. ω(NaCl) = 11,7 / 200 = <b>5,85%</b>. В растворе остался избыток NaOH (0,05 моль).</p></div>
+<p>Если выделяется газ или осадок, их массы вычитают. Если растворяется твёрдое вещество (Zn в кислоте), его масса прибавляется, а масса водорода вычитается.</p>
+<div class="trap">Не берите за массу нового раствора массу только одного из исходных растворов. И не забудьте, что вода в реакции может образовываться — она входит в массу раствора и отдельно её не прибавляют.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Чему равна массовая доля NaCl (%) в растворе из примера выше?</summary><p>Ответ: <b>5.85</b></p></details></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 21 задание для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 5, повышенный — 11, высокий — 5. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/chemistry/chem-calc-equations/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/chemistry">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/chemistry/chem-calc-solutions/">← Растворы: массовая доля, разбавление, растворимость</a><a class="btn primary" href="/#/exam/chemistry">Пробный вариант →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

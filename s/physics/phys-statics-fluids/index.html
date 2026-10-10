@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Статика и гидростатика — теория для ОГЭ и ЕГЭ | Физика | Клетка</title>
+  <meta name="description" content="Статика и гидростатика — Когда тело находится в равновесии: момент силы, рычаги и блоки, центр тяжести, давление, законы Паскаля и Архимеда, условие плавания тел. Теория для ОГЭ и ЕГЭ по предмету…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/physics/phys-statics-fluids/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Статика и гидростатика — теория для ОГЭ и ЕГЭ | Физика | Клетка">
+  <meta property="og:description" content="Статика и гидростатика — Когда тело находится в равновесии: момент силы, рычаги и блоки, центр тяжести, давление, законы Паскаля и Архимеда, условие плавания тел. Теория для ОГЭ и ЕГЭ по предмету…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/physics/phys-statics-fluids/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/physics">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/physics/phys-statics-fluids/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/physics/">Физика</a><span aria-hidden="true">/</span><span aria-current="page">Статика и гидростатика</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Физика · тема 10 из 19 · ОГЭ № 1–6, 20–22 · ЕГЭ № 4–6, 26</span><h1>Статика и гидростатика</h1><p class="topic-summary">Когда тело находится в равновесии: момент силы, рычаги и блоки, центр тяжести, давление, законы Паскаля и Архимеда, условие плавания тел.</p>
+      <div class="topic-meta"><span class="chip">30 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">22 задания</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Момент силы $M = Fl$, плечо $l$ — расстояние от оси до линии действия силы</li><li>Равновесие: $\sum\vec F = 0$ и сумма моментов по часовой стрелке равна сумме моментов против</li><li>Давление $p = \dfrac{F}{S}$; в жидкости на глубине $h$: $p = p_0 + \rho gh$</li><li>Гидравлический пресс: $\dfrac{F_2}{F_1} = \dfrac{S_2}{S_1}$</li><li>Сила Архимеда $F_A = \rho_ж gV_{погр}$; тело плавает, если $\rho_{т} \lt \rho_ж$, и тогда $F_A = mg$</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Момент силы и правило рычага</h2><p>Сила поворачивает тело тем сильнее, чем дальше от оси проходит её линия действия. Мера вращающего действия — <b>момент силы</b>:</p>
+<div class="rule">$$M = Fl \qquad [M] = \text{Н}\cdot\text{м}$$ Плечо $l$ — <b>кратчайшее расстояние от оси вращения до линии действия силы</b>. Правило рычага (правило моментов): $F_1l_1 = F_2l_2$.</div>
+<div class="trap">Плечо — не расстояние до точки приложения силы. Если сила приложена на расстоянии $d$ от оси под углом $\alpha$ к рычагу, то плечо $l = d\sin\alpha$. Сила, линия действия которой проходит через ось, имеет нулевое плечо и тело не поворачивает.</div>
+<p><b>Простые механизмы.</b> Рычаг даёт выигрыш в силе во столько раз, во сколько длинное плечо больше короткого. Неподвижный блок меняет только направление силы. Идеальный подвижный блок даёт выигрыш в силе в 2 раза. «Золотое правило механики»: во сколько раз выигрываем в силе, во столько же проигрываем в расстоянии — выигрыша в работе нет.</p>
+<details class="static-quick"><summary><b>Проверь себя.</b> На рычаг действует сила 3 Н с плечом 40 см. Какое плечо (в сантиметрах) должна иметь сила 12 Н, чтобы рычаг был в равновесии?</summary><p>Ответ: <b>10</b></p></details><figure class="viz"><svg viewBox="0 0 500 210" role="img" aria-label="Рычаг" xmlns="http://www.w3.org/2000/svg"><polygon points="220,130 205,160 235,160" class="c5 f4"/><line x1="40" y1="124" x2="460" y2="124" class="c1 wide"/><line x1="70" y1="124" x2="70" y2="190" class="c2"/><polygon points="70,200 74.5,190 65.5,190" class="h2"/><line x1="400" y1="124" x2="400" y2="160" class="c2"/><polygon points="400,170 404.5,160 395.5,160" class="h2"/><text x="78" y="196" class="t tb tr">F₁</text><text x="408" y="168" class="t tb tr">F₂</text><line x1="145" y1="100" x2="78" y2="100" class="c3"/><polygon points="70,100 78,103.6 78,96.4" class="h3"/><line x1="145" y1="100" x2="212" y2="100" class="c3"/><polygon points="220,100 212,96.4 212,103.6" class="h3"/><text x="145" y="92" class="t tb tg" text-anchor="middle">l₁</text><line x1="310" y1="100" x2="228" y2="100" class="c3"/><polygon points="220,100 228,103.6 228,96.4" class="h3"/><line x1="310" y1="100" x2="392" y2="100" class="c3"/><polygon points="400,100 392,96.4 392,103.6" class="h3"/><text x="310" y="92" class="t tb tg" text-anchor="middle">l₂</text><text x="250" y="30" class="t tb" text-anchor="middle">M = F·l</text></svg><figcaption><b>Рис. 1.</b> Правило рычага: F₁·l₁ = F₂·l₂ — моменты сил равны</figcaption></figure>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Условия равновесия и центр тяжести</h2><div class="rule">Тело находится в равновесии, если<br>1) векторная сумма всех сил равна нулю: $\sum\vec F = 0$;<br>2) сумма моментов сил относительно любой оси равна нулю (моменты «по часовой» уравновешены моментами «против»).</div>
+<p><b>Центр тяжести</b> — точка приложения равнодействующей сил тяжести. У однородного стержня он в середине, у однородного прямоугольника — в точке пересечения диагоналей. Для двух грузов на лёгком стержне центр тяжести делит расстояние между ними в отношении, обратном массам: $m_1x_1 = m_2x_2$ (гантель с грузами 1 кг и 3 кг на стержне длиной 40 см: центр тяжести в 30 см от лёгкого груза).</p>
+<div class="tip">Составляя уравнение моментов, выбирайте ось в точке, где приложена неизвестная сила, которую не спрашивают: её момент обнулится, и неизвестных станет меньше.</div>
+<div class="example"><p><b>Пример.</b> Однородная балка длиной 2 м и массой 10 кг подвешена горизонтально на двух вертикальных тросах за концы. На расстоянии 0,5 м от левого конца висит груз массой 30 кг. Найдите натяжения тросов.</p>
+<p>Ось — в левом конце. Сила тяжести балки 100 Н приложена в середине (плечо 1 м), груз 300 Н — с плечом 0,5 м, правый трос — с плечом 2 м: $T_П\cdot 2 = 100\cdot 1 + 300\cdot 0{,}5$, $T_П = 125$ Н. Из равенства сил: $T_Л = 400 - 125 = 275$ Н.</p></div>
+<p><b>Виды равновесия</b>: устойчивое (при отклонении тело возвращается — центр тяжести ниже точки опоры или поднимается при отклонении), неустойчивое (шарик на вершине горки) и безразличное (шар на горизонтальном столе).</p>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Давление твёрдых тел, жидкостей и газов</h2><div class="rule">$$p = \dfrac{F}{S} \qquad p_{жидк} = \rho gh \qquad p_{полн} = p_0 + \rho gh$$ Единица давления — паскаль: 1 Па $=$ 1 Н/м². Нормальное атмосферное давление $p_0 \approx 10^5$ Па $\approx 760$ мм рт. ст.</div>
+<p>Давление жидкости зависит только от её плотности и глубины и <b>не зависит от формы сосуда</b> (гидростатический парадокс). Каждые 10 м воды добавляют примерно 100 кПа — ещё одну «атмосферу».</p>
+<p><b>Сообщающиеся сосуды</b>: однородная жидкость устанавливается на одном уровне. Если жидкости разные, высоты столбов над границей раздела обратно пропорциональны плотностям: $\rho_1h_1 = \rho_2h_2$. Столб масла ($800$ кг/м³) высотой 20 см уравновешивается столбом воды высотой 16 см.</p>
+<div class="trap">Если в задаче спрашивают «давление воды на глубине», обычно имеют в виду $\rho gh$. Если «полное давление» или «давление на водолаза» — прибавьте атмосферное $p_0$. Читайте условие внимательно. И переводите см² в м²: $1\ \text{см}^2 = 10^{-4}\ \text{м}^2$.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Какое давление (в кПа) создаёт столб воды высотой 10 м? Плотность воды 1000 кг/м³, атмосферное давление не учитывайте.</summary><p>Ответ: <b>100</b></p></details>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Закон Паскаля и гидравлический пресс</h2><p><b>Закон Паскаля</b>: давление, производимое на жидкость или газ, передаётся без изменения в каждую точку жидкости или газа. На нём работают гидравлический пресс, домкрат, тормозная система автомобиля.</p>
+<div class="rule">$$\dfrac{F_1}{S_1} = \dfrac{F_2}{S_2} \quad\Rightarrow\quad \dfrac{F_2}{F_1} = \dfrac{S_2}{S_1}, \qquad S_1h_1 = S_2h_2$$ Выигрыш в силе равен отношению площадей поршней; объём вытесненной жидкости одинаков, поэтому большой поршень сдвигается во столько же раз меньше.</div>
+<div class="example"><p><b>Пример.</b> Площадь малого поршня 2 см², большого — 200 см². На малый поршень давят с силой 150 Н. Большой поршень действует с силой $F_2 = 150\cdot\dfrac{200}{2} = 15\,000$ Н. Если малый поршень опустился на 20 см, большой поднимется всего на $20\cdot\dfrac{2}{200} = 0{,}2$ см.</p></div>
+<h2 id="sec-4"><span class="sec-n" aria-hidden="true">5.</span>Закон Архимеда и плавание тел</h2><div class="rule">На тело, погружённое в жидкость или газ, действует выталкивающая сила, равная весу вытесненной жидкости: $$F_A = \rho_ж\, g\, V_{погр}$$</div>
+<ul>
+<li>Вес тела в жидкости: $P = mg - F_A$ — «динамометр показывает меньше».</li>
+<li>$\rho_{т} \gt \rho_ж$ — тело тонет; $\rho_{т} = \rho_ж$ — плавает внутри жидкости; $\rho_{т} \lt \rho_ж$ — всплывает и плавает на поверхности.</li>
+<li>Для плавающего тела $F_A = mg$, а доля погружённого объёма $\dfrac{V_{погр}}{V} = \dfrac{\rho_{т}}{\rho_ж}$. Лёд (900 кг/м³) погружён в воду на 90 %, над водой — 10 %.</li>
+</ul>
+<div class="trap">Сила Архимеда не зависит ни от плотности тела, ни от глубины погружения (если тело погружено полностью). Шарики одинакового объёма из алюминия и из железа, полностью погружённые в воду, испытывают <b>одинаковую</b> выталкивающую силу.</div>
+<div class="example"><p><b>Пример.</b> Плавающее тело переложили из пресной воды в солёную. Оно по-прежнему плавает, поэтому $F_A = mg$ — сила Архимеда не изменилась. Но плотность жидкости больше, значит $V_{погр} = \dfrac{m}{\rho_ж}$ уменьшился — тело немного «всплыло».</p></div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Какая часть объёма льдины (в процентах) находится над водой? Плотность льда 900 кг/м³, воды — 1000 кг/м³.</summary><p>Ответ: <b>10</b></p></details></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 22 задания для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 6, повышенный — 11, высокий — 5. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/physics/phys-statics-fluids/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/physics">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/physics/phys-quantum/">← Квантовая и ядерная физика</a><a class="btn primary" href="/s/physics/phys-measure/">Измерения: цена деления, погрешность, единицы СИ →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Логика и таблицы истинности — теория для ОГЭ и ЕГЭ | Информатика | Клетка</title>
+  <meta name="description" content="Логика и таблицы истинности — Логические операции, таблицы истинности и формулы с параметром — от простого ОГЭ-3 до ЕГЭ-2 и ЕГЭ-15, которые удобно решать перебором на Python. Теория для ОГЭ и ЕГЭ по…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/informatics/inf-logic/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Логика и таблицы истинности — теория для ОГЭ и ЕГЭ | Информатика | Клетка">
+  <meta property="og:description" content="Логика и таблицы истинности — Логические операции, таблицы истинности и формулы с параметром — от простого ОГЭ-3 до ЕГЭ-2 и ЕГЭ-15, которые удобно решать перебором на Python. Теория для ОГЭ и ЕГЭ по…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/informatics/inf-logic/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/informatics">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/informatics/inf-logic/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/informatics/">Информатика</a><span aria-hidden="true">/</span><span aria-current="page">Логика и таблицы истинности</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Информатика · тема 2 из 13 · ОГЭ № 3 · ЕГЭ № 2, 15</span><h1>Логика и таблицы истинности</h1><p class="topic-summary">Логические операции, таблицы истинности и формулы с параметром — от простого ОГЭ-3 до ЕГЭ-2 и ЕГЭ-15, которые удобно решать перебором на Python.</p>
+      <div class="topic-meta"><span class="chip">25 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">22 задания</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Приоритет: НЕ (¬), И (∧), ИЛИ (∨), импликация (→), эквивалентность (≡)</li><li>Импликация A → B ложна только при A = 1, B = 0; равносильна ¬A ∨ B</li><li>Таблица истинности для n переменных содержит 2<sup>n</sup> строк</li><li>НЕ (x &lt; 5) — это x ≥ 5, а не x &gt; 5</li><li>ЕГЭ-2 и ЕГЭ-15 решаются перебором: itertools.product, permutations, цикл по A</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Высказывания и логические операции</h2><p><b>Высказывание</b> — утверждение, про которое можно сказать, истинно оно (1) или ложно (0). Из простых высказываний операции строят сложные.</p>
+<table class="tbl"><tr><th>Операция</th><th>Обозначение</th><th>Python</th><th>Истинна, когда</th></tr>
+<tr><td>Отрицание (НЕ)</td><td>¬A</td><td>not A</td><td>A ложно</td></tr>
+<tr><td>Конъюнкция (И)</td><td>A ∧ B</td><td>A and B</td><td>оба истинны</td></tr>
+<tr><td>Дизъюнкция (ИЛИ)</td><td>A ∨ B</td><td>A or B</td><td>хотя бы одно истинно</td></tr>
+<tr><td>Импликация</td><td>A → B</td><td>A &lt;= B</td><td>всегда, кроме 1 → 0</td></tr>
+<tr><td>Эквивалентность</td><td>A ≡ B</td><td>A == B</td><td>значения совпадают</td></tr></table>
+<div class="rule"><b>Порядок действий:</b> скобки → ¬ → ∧ → ∨ → → → ≡.<br>Импликация: A → B = ¬A ∨ B. Законы де Моргана: ¬(A ∧ B) = ¬A ∨ ¬B; ¬(A ∨ B) = ¬A ∧ ¬B.</div>
+<div class="trap">Импликация — «обещание»: «если A, то B» нарушено только тогда, когда A выполнено, а B нет. Если A ложно, импликация <b>истинна</b> при любом B. В Python её пишут как A &lt;= B (только для логических значений 0/1 и True/False!).</div><figure class="viz"><svg viewBox="0 0 480 200" role="img" aria-label="Круги Эйлера" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="vclip"><circle cx="100" cy="95" r="60"/></clipPath></defs><circle cx="160" cy="95" r="60" class="f1 k0" clip-path="url(#vclip)"/><circle cx="100" cy="95" r="60" class="c1 fn"/><circle cx="160" cy="95" r="60" class="c1 fn"/><text x="70" y="100" class="t tb" text-anchor="middle">A</text><text x="190" y="100" class="t tb" text-anchor="middle">B</text><text x="130" y="185" class="t tb ti" text-anchor="middle">A ∧ B (И)</text><circle cx="330" cy="95" r="60" class="c2 f2"/><circle cx="390" cy="95" r="60" class="c2 f2"/><circle cx="330" cy="95" r="60" class="c2 fn"/><text x="300" y="100" class="t tb" text-anchor="middle">A</text><text x="420" y="100" class="t tb" text-anchor="middle">B</text><text x="360" y="185" class="t tb tr" text-anchor="middle">A ∨ B (ИЛИ)</text></svg><figcaption><b>Рис. 1.</b> Конъюнкция A ∧ B — пересечение (оба истинны); дизъюнкция A ∨ B — объединение (хотя бы одно)</figcaption></figure>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Таблицы истинности</h2><p>Таблица истинности перечисляет все наборы значений переменных. Для $n$ переменных наборов $2^n$: для двух — 4, для трёх — 8, для четырёх — 16.</p>
+<div class="example"><p><b>Пример.</b> Таблица для F = A → B:</p>
+<table class="tbl"><tr><th>A</th><th>B</th><th>F</th></tr><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></table></div>
+<p>Постройте таблицу для любой формулы в тренажёре:</p>
+<p class="static-lab"><a class="btn" href="/#/labs/truth">Интерактив «Таблицы истинности» — открыть в тренажёре →</a></p>
+<details class="static-quick"><summary><b>Проверь себя.</b> Сколько строк в таблице истинности функции от 5 переменных?</summary><p>Ответ: <b>32</b></p></details>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>ОГЭ-3: при каком x высказывание истинно</h2><p>В задании 3 ОГЭ нужно найти наибольшее или наименьшее число (или имя, слово), при котором составное высказывание истинно или ложно.</p>
+<div class="example"><p><b>Пример.</b> Найдите наименьшее натуральное x, для которого истинно: НЕ (x &lt; 5) И (x нечётное).</p>
+<p>НЕ (x &lt; 5) означает x ≥ 5. Наименьшее нечётное число, не меньшее 5, — это <b>5</b>.</p></div>
+<div class="trap">Отрицание «меньше» — это «больше <b>или равно</b>». Если написать x &gt; 5, потеряете граничное значение и получите неверный ответ 7.</div>
+<div class="tip">Если просят, чтобы высказывание было <b>ложно</b>, сначала поставьте НЕ перед всем выражением и раскройте по законам де Моргана: ¬(A ∨ B) = ¬A ∧ ¬B — оба условия должны нарушаться одновременно.</div>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>ЕГЭ-2: фрагмент таблицы истинности</h2><p>Дана функция F от x, y, z, w и фрагмент её таблицы, где столбцы переменных перепутаны, а часть клеток пуста. Нужно понять, какой переменной соответствует каждый столбец.</p>
+<div class="rule">Схема решения программой: перебрать все способы заполнить пустые клетки (product) и все перестановки имён столбцов (permutations); оставить те, где строки различны и F даёт нужные значения.</div>
+<pre><code>from itertools import product, permutations
+
+def F(x, y, z, w):
+    return (x or y) &lt;= (z == w)
+
+for a in product([0, 1], repeat=5):          # 5 пустых клеток
+    t = [(1, a[0], 0, a[1]), (a[2], 1, a[3], 0), (1, 1, a[4], 1)]
+    if len(set(t)) == len(t):                # строки должны быть различны
+        for p in permutations('xyzw'):
+            if all(F(**dict(zip(p, r))) == 0 for r in t):
+                print(''.join(p))</code></pre>
+<div class="trap">Не забудьте проверку len(set(t)) == len(t): в условии сказано, что строки фрагмента различны. Без неё программа может выдать лишние варианты ответа.</div>
+<h2 id="sec-4"><span class="sec-n" aria-hidden="true">5.</span>ЕГЭ-15: ДЕЛ, отрезки и поразрядные операции</h2><p>В задании 15 формула содержит параметр A, и нужно найти A, при котором формула <b>тождественно истинна</b> (истинна при любом x). Встречаются три вида:</p>
+<ul><li>ДЕЛ(n, m) — «n делится на m без остатка» — в Python n % m == 0;</li>
+<li>отрезки на числовой прямой: x ∈ P — в Python P[0] &lt;= x &lt;= P[1];</li>
+<li>поразрядная конъюнкция m &amp; n — в Python тот же оператор &amp;.</li></ul>
+<div class="example"><p><b>Пример.</b> Для какого наименьшего натурального A формула (ДЕЛ(x, A) ∧ ДЕЛ(x, 36)) → ДЕЛ(x, 24) тождественно истинна?</p>
+<pre><code>def ok(A):
+    for x in range(1, 10000):
+        if not ((x % A == 0 and x % 36 == 0) &lt;= (x % 24 == 0)):
+            return False
+    return True
+
+print(min(A for A in range(1, 1000) if ok(A)))   # 8</code></pre>
+<p>Логика: число, кратное и A, и 36, должно делиться на 24 = 8·3. В 36 = 4·9 тройка есть, а двойка входит только во второй степени — недостающую восьмёрку должен дать A. Ответ 8.</p></div>
+<div class="trap">Перебирайте x в достаточно большом диапазоне. Если диапазон мал, «подходящими» окажутся огромные A — просто потому, что до них перебор не дошёл.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> При каком наибольшем натуральном A формула ДЕЛ(x, 12) → ДЕЛ(x, A) тождественно истинна?</summary><p>Ответ: <b>12</b></p></details></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 22 задания для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 7, повышенный — 9, высокий — 6. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/informatics/inf-logic/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/informatics">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/informatics/inf-numsys/">← Системы счисления</a><a class="btn primary" href="/s/informatics/inf-coding/">Кодирование информации и условие Фано →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

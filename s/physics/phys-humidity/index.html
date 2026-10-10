@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Влажность воздуха, насыщенный пар и кипение — теория для ОГЭ и ЕГЭ | Физика | Клетка</title>
+  <meta name="description" content="Влажность воздуха, насыщенный пар и кипение — Как считать относительную влажность, находить точку росы и объяснять, почему вода закипает при разном давлении. Теория для ОГЭ и ЕГЭ по предмету…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/physics/phys-humidity/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Влажность воздуха, насыщенный пар и кипение — теория для ОГЭ и ЕГЭ | Физика | Клетка">
+  <meta property="og:description" content="Влажность воздуха, насыщенный пар и кипение — Как считать относительную влажность, находить точку росы и объяснять, почему вода закипает при разном давлении. Теория для ОГЭ и ЕГЭ по предмету…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/physics/phys-humidity/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/physics">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/physics/phys-humidity/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/physics/">Физика</a><span aria-hidden="true">/</span><span aria-current="page">Влажность воздуха, насыщенный пар и кипение</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Физика · тема 14 из 19 · ОГЭ № 8–9 · ЕГЭ № 8, 10</span><h1>Влажность воздуха, насыщенный пар и кипение</h1><p class="topic-summary">Как считать относительную влажность, находить точку росы и объяснять, почему вода закипает при разном давлении.</p>
+      <div class="topic-meta"><span class="chip">15 мин чтения</span><span class="chip ink">ОГЭ</span><span class="chip ink">ЕГЭ</span><span class="chip">17 заданий</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Относительная влажность $\varphi = \dfrac{p}{p_{\text{нас}}}\cdot 100\% = \dfrac{\rho}{\rho_{\text{нас}}}\cdot 100\%$</li><li>Давление насыщенного пара растёт с температурой и не зависит от объёма</li><li>Точка росы — температура, при которой пар в воздухе становится насыщенным</li><li>При изотермическом сжатии ненасыщенного пара $p \sim 1/V$, а после достижения насыщения давление не растёт — пар конденсируется</li><li>Жидкость кипит, когда давление её насыщенного пара равно внешнему давлению</li><li>Показания влажного термометра психрометра ниже, чем сухого; чем больше разность, тем суше воздух</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Насыщенный пар и относительная влажность</h2><p>Над поверхностью воды в закрытом сосуде одни молекулы вылетают из жидкости, другие возвращаются. Когда эти потоки равны, наступает <b>динамическое равновесие</b>, и пар называется <b>насыщенным</b>. Его давление $p_{\text{нас}}$ при данной температуре — наибольшее возможное.</p>
+<p>Воздух в комнате обычно содержит пар, но ненасыщенный. Его «наполненность» измеряет <b>относительная влажность</b>:</p>
+<div class="rule">$$\varphi = \dfrac{p}{p_{\text{нас}}}\cdot 100\% = \dfrac{\rho}{\rho_{\text{нас}}}\cdot 100\%$$ Здесь $p$ и $\rho$ — давление и плотность (абсолютная влажность) водяного пара в воздухе, $p_{\text{нас}}$ и $\rho_{\text{нас}}$ — значения для насыщенного пара при этой же температуре.</div>
+<table class="tbl"><tr><th>$t$, °С</th><th>0</th><th>10</th><th>15</th><th>20</th><th>25</th><th>30</th></tr>
+<tr><td>$p_{\text{нас}}$, кПа</td><td>0,61</td><td>1,23</td><td>1,71</td><td>2,33</td><td>3,17</td><td>4,24</td></tr>
+<tr><td>$\rho_{\text{нас}}$, г/м³</td><td>4,8</td><td>9,4</td><td>12,8</td><td>17,3</td><td>23,0</td><td>30,3</td></tr></table>
+<div class="trap">Давление насыщенного пара зависит <b>только от температуры</b>, но не от объёма и не от количества пара. Поэтому к нему нельзя применять закон Бойля — Мариотта: при сжатии насыщенного пара давление не растёт, а лишний пар превращается в воду.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Парциальное давление пара 1,5 кПа, а давление насыщенного пара при этой температуре 3,0 кПа. Чему равна относительная влажность (в %)?</summary><p>Ответ: <b>50</b></p></details>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Точка росы</h2><p>Если охлаждать воздух, не меняя количества пара в нём, давление пара $p$ остаётся прежним, а $p_{\text{нас}}$ падает. Рано или поздно они сравняются — влажность станет 100 %.</p>
+<div class="rule"><b>Точка росы</b> — температура, при которой находящийся в воздухе пар становится насыщенным. При дальнейшем охлаждении пар конденсируется: выпадает роса, образуется туман.</div>
+<div class="example"><p><b>Пример.</b> В воздухе 9,4 г водяного пара в кубометре. По таблице такая плотность соответствует насыщенному пару при 10 °С — это и есть точка росы. Если ночью температура упадёт ниже 10 °С, на траве выпадет роса.</p></div>
+<div class="trap">Точка росы зависит от того, сколько пара в воздухе, а не от температуры воздуха. Чем влажнее воздух, тем точка росы ближе к его температуре. При $\varphi = 100\%$ они совпадают.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Абсолютная влажность воздуха равна 9,4 г/м³. Найдите точку росы (в °С), пользуясь таблицей выше.</summary><p>Ответ: <b>10</b></p></details>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Сжатие и расширение: график p–V</h2><p>Пусть ненасыщенный пар сжимают при постоянной температуре. Пока пар ненасыщенный, он ведёт себя как идеальный газ: $pV = \text{const}$, давление растёт, влажность растёт пропорционально $p$. Когда $p$ достигает $p_{\text{нас}}$, начинается конденсация.</p>
+<div class="rule">На изотерме $p(V)$ сначала гипербола, а после достижения насыщения — <b>горизонтальный участок</b>: давление постоянно, объём уменьшается, а масса пара падает за счёт превращения в воду.</div>
+<div class="example"><p><b>Пример.</b> Влажность воздуха 40 %. Объём изотермически уменьшили вдвое: давление пара вдвое больше, значит $\varphi = 80\%$. Если уменьшить в 2,5 раза — влажность достигнет 100 %; при дальнейшем сжатии часть пара сконденсируется.</p></div>
+<div class="trap">Если конденсат уже появился, масса пара определяется формулой $m = \rho_{\text{нас}}V$, а не первоначальной. Лишнюю массу считают как разность: то, что было, минус то, что уместилось.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Влажность 40 %, объём сосуда изотермически уменьшили в 2 раза. Какой стала влажность (в %)?</summary><p>Ответ: <b>80</b></p></details>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Кипение и давление</h2><p>Кипение — парообразование по всему объёму жидкости: внутри неё появляются пузырьки пара. Пузырёк может расти, только если давление пара в нём не меньше внешнего давления.</p>
+<div class="rule">Жидкость кипит при такой температуре, при которой <b>давление её насыщенного пара равно внешнему давлению</b>. При нормальном давлении 101 кПа вода кипит при 100 °С; в горах, где давление ниже, — при меньшей температуре, в скороварке (давление выше) — при большей.</div>
+<div class="trap">Температура кипения — не свойство вещества «навсегда». Вода кипит при 100 °С только при нормальном давлении. Кроме того, пока идёт кипение, температура жидкости <i>не растёт</i>, сколько бы теплоты ни подводили.</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Вода при давлении 70 кПа закипает при температуре 100 °С? (да/нет)</summary><p>Ответ: <b>нет</b></p></details>
+<h2 id="sec-4"><span class="sec-n" aria-hidden="true">5.</span>Психрометр и гигрометр</h2><p><b>Психрометр</b> — два одинаковых термометра. Резервуар одного обёрнут влажной тканью. С влажной ткани вода испаряется и охлаждает термометр: он показывает температуру ниже, чем «сухой». Чем суше воздух, тем интенсивнее испарение и тем <b>больше разность показаний</b>.</p>
+<p>Относительную влажность находят по психрометрической таблице по значению сухого термометра и разности показаний. Если воздух насыщен, испарения нет, и оба термометра показывают одно и то же.</p>
+<div class="tip">Влажность воздуха около 40–60 % считается комфортной. Ниже — воздух сухой, выше — душно.</div>
+<div class="trap">Не путайте: чем больше разность, тем <b>ниже</b> влажность (а не выше).</div>
+<details class="static-quick"><summary><b>Проверь себя.</b> Воздух насыщен водяным паром (влажность 100 %). Чему равна разность показаний сухого и влажного термометров (в °С)?</summary><p>Ответ: <b>0</b></p></details></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 17 заданий для ОГЭ и ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 5, повышенный — 11, высокий — 1. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/physics/phys-humidity/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/physics">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/physics/phys-heat-transfer/">← Теплота: нагрев, плавление, кипение и тепловой баланс</a><a class="btn primary" href="/s/physics/phys-electrostatics/">Электростатика: закон Кулона, поле, потенциал, конденсатор →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>

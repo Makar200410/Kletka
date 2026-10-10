@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Стереометрия — теория для ЕГЭ | Математика | Клетка</title>
+  <meta name="description" content="Стереометрия — Объёмы и площади поверхностей многогранников и тел вращения, подобие тел и подход к стереометрической задаче 14. Теория для ЕГЭ по предмету «Математика»: правила, примеры, ловушки…">
+  <link rel="canonical" href="https://kletka.himpodgotovka.ru/s/math/math-solid/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Клетка">
+  <meta property="og:title" content="Стереометрия — теория для ЕГЭ | Математика | Клетка">
+  <meta property="og:description" content="Стереометрия — Объёмы и площади поверхностей многогранников и тел вращения, подобие тел и подход к стереометрической задаче 14. Теория для ЕГЭ по предмету «Математика»: правила, примеры, ловушки…">
+  <meta property="og:url" content="https://kletka.himpodgotovka.ru/s/math/math-solid/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#1f3fa6">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="/css/app.css?v=20261010">
+  <script>try { var t = JSON.parse(localStorage.getItem('kletka.v1') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    /* trackHash считает переходы между темами (#/…) как просмотры страниц. */
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113420686', 'ym');
+    ym(113420686, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: 'dataLayer', referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true, trackHash: true });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="static-page">
+  <noscript><div><img src="https://mc.yandex.ru/watch/113420686" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <header class="top"><div class="top-in">
+    <a class="logo" href="/" aria-label="Клетка — на главную"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo-text">Клетка</span></a>
+    <nav class="nav static-nav" aria-label="Разделы"><a href="/">Тренажёр</a><a href="/#/exam">Пробник</a><a href="/#/cards/math">Карточки</a><a href="/#/labs">Лаборатория</a></nav>
+    <div class="top-right"><a class="btn primary sm" href="/#/s/math/math-solid/practice">Решать задания</a></div>
+  </div></header>
+  <main>
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Клетка</a><span aria-hidden="true">/</span><a href="/s/math/">Математика</a><span aria-hidden="true">/</span><span aria-current="page">Стереометрия</span></nav>
+
+    <header class="topic-head"><span class="eyebrow">Математика · тема 7 из 21 · ЕГЭ № 3, 14</span><h1>Стереометрия</h1><p class="topic-summary">Объёмы и площади поверхностей многогранников и тел вращения, подобие тел и подход к стереометрической задаче 14.</p>
+      <div class="topic-meta"><span class="chip">25 мин чтения</span><span class="chip ink">ЕГЭ</span><span class="chip">22 задания</span></div></header>
+    <section class="page cheat" aria-labelledby="cheat-h"><div class="cheat-title"><h2 class="hand" id="cheat-h">Коротко</h2><span class="muted">главное за 30 секунд</span></div><ol><li>Призма и цилиндр: $V=S_{\text{осн}}h$; пирамида и конус: $V=\dfrac13S_{\text{осн}}h$</li><li>Шар: $V=\dfrac43\pi R^3$, $S=4\pi R^2$</li><li>Диагональ прямоугольного параллелепипеда: $d=\sqrt{a^2+b^2+c^2}$</li><li>Размеры выросли в $k$ раз: площадь — в $k^2$, объём — в $k^3$</li><li>Угол между прямой и плоскостью — это угол между прямой и её проекцией</li></ol></section>
+    <article class="page"><div class="prose"><h2 id="sec-0"><span class="sec-n" aria-hidden="true">1.</span>Многогранники</h2><div class="rule"><p>Призма (в том числе параллелепипед и куб): $V=S_{\text{осн}}\cdot h$.</p><p>Пирамида: $V=\dfrac13S_{\text{осн}}\cdot h$.</p><p>Прямоугольный параллелепипед: $V=abc$, диагональ $d=\sqrt{a^2+b^2+c^2}$. Куб: $V=a^3$, $S_{\text{пов}}=6a^2$.</p></div>
+<p>Площадь поверхности — сумма площадей всех граней. Боковая поверхность прямой призмы: $S_{\text{бок}}=P_{\text{осн}}\cdot h$; правильной пирамиды: $S_{\text{бок}}=\dfrac12P_{\text{осн}}\cdot l$, где $l$ — апофема (высота боковой грани).</p>
+<details class="static-quick"><summary><b>Проверь себя.</b> Найдите объём куба с ребром 3.</summary><p>Ответ: <b>27</b></p></details><figure class="viz"><svg viewBox="0 0 440 230" role="img" aria-label="Куб" xmlns="http://www.w3.org/2000/svg"><polygon points="60,200 190,200 190,70 60,70" class="f1 k0"/><line x1="60" y1="200" x2="190" y2="200" class="c1"/><line x1="190" y1="200" x2="245" y2="155" class="c1"/><line x1="60" y1="200" x2="60" y2="70" class="c1"/><line x1="190" y1="200" x2="190" y2="70" class="c1"/><line x1="245" y1="155" x2="245" y2="25" class="c1"/><line x1="60" y1="70" x2="190" y2="70" class="c1"/><line x1="190" y1="70" x2="245" y2="25" class="c1"/><line x1="245" y1="25" x2="115" y2="25" class="c1"/><line x1="115" y1="25" x2="60" y2="70" class="c1"/><line x1="60" y1="200" x2="115" y2="155" class="c1 thin d"/><line x1="115" y1="155" x2="245" y2="155" class="c1 thin d"/><line x1="115" y1="155" x2="115" y2="25" class="c1 thin d"/><line x1="60" y1="200" x2="245" y2="25" class="c2"/><line x1="60" y1="200" x2="190" y2="70" class="c3 thin"/><text x="54" y="216" class="ts" text-anchor="end">A</text><text x="251" y="21" class="ts">C₁</text><text x="125" y="218" class="t tb ti" text-anchor="middle">a</text><text x="300" y="70" class="t tb tr">d = a√3</text><text x="300" y="96" class="t tg">грань: a√2</text><text x="300" y="122" class="t tb">V = a³</text><text x="300" y="146" class="t">S = 6a²</text></svg><figcaption><b>Рис. 1.</b> Куб с ребром a: диагональ грани a√2, диагональ куба a√3, объём a³</figcaption></figure>
+<h2 id="sec-1"><span class="sec-n" aria-hidden="true">2.</span>Тела вращения</h2><table class="tbl"><tr><th>Тело</th><th>Объём</th><th>Поверхность</th></tr>
+<tr><td>Цилиндр</td><td>$\pi R^2h$</td><td>$S_{\text{бок}}=2\pi Rh$</td></tr>
+<tr><td>Конус</td><td>$\dfrac13\pi R^2h$</td><td>$S_{\text{бок}}=\pi Rl$, $l$ — образующая</td></tr>
+<tr><td>Шар</td><td>$\dfrac43\pi R^3$</td><td>$S=4\pi R^2$</td></tr></table>
+<p>У конуса высота, радиус основания и образующая образуют прямоугольный треугольник: $l^2=h^2+R^2$.</p>
+<div class="tip">В ЕГЭ №3 ответ часто просят «делённым на $\pi$» — тогда $\pi$ просто не пишите: если $V=96\pi$, ответ $96$.</div><figure class="viz"><svg viewBox="0 0 400 235" role="img" aria-label="Цилиндр и конус" xmlns="http://www.w3.org/2000/svg"><ellipse cx="110" cy="50" rx="70" ry="18" class="c1 f1"/><line x1="40" y1="50" x2="40" y2="180" class="c1"/><line x1="180" y1="50" x2="180" y2="180" class="c1"/><path d="M40 180 A70 18 0 0 0 180 180" class="c1"/><path d="M40 180 A70 18 0 0 1 180 180" class="c1 thin d"/><line x1="110" y1="50" x2="180" y2="50" class="c2"/><text x="145" y="44" class="t tb tr" text-anchor="middle">r</text><line x1="110" y1="50" x2="110" y2="180" class="c2 d"/><text x="118" y="120" class="t tb tr">h</text><text x="110" y="222" class="t tb" text-anchor="middle">V = πr²h</text><path d="M290 50 L220 180 M290 50 L360 180" class="c1"/><path d="M220 180 A70 18 0 0 0 360 180" class="c1"/><path d="M220 180 A70 18 0 0 1 360 180" class="c1 thin d"/><line x1="290" y1="50" x2="290" y2="180" class="c2 d"/><line x1="290" y1="180" x2="360" y2="180" class="c2"/><text x="298" y="130" class="t tb tr">h</text><text x="325" y="174" class="t tb tr" text-anchor="middle">r</text><text x="290" y="222" class="t tb" text-anchor="middle">V = ⅓πr²h</text></svg><figcaption><b>Рис. 2.</b> Цилиндр и конус с одинаковыми r и h: объём конуса ровно в 3 раза меньше</figcaption></figure>
+<h2 id="sec-2"><span class="sec-n" aria-hidden="true">3.</span>Подобие тел</h2><div class="rule">Если все линейные размеры тела увеличить в $k$ раз, то площадь поверхности увеличится в $k^2$ раз, а объём — в $k^3$ раз.</div>
+<div class="example"><p><b>Пример.</b> Жидкость в конической воронке (вершиной вниз) налита до половины высоты. Какую часть объёма воронки она занимает? Налитая жидкость — конус, подобный воронке с $k=\dfrac12$, поэтому её объём — $\left(\dfrac12\right)^3=\dfrac18$ объёма воронки.</p></div>
+<div class="trap">Если увеличить в 2 раза только радиус цилиндра, оставив высоту, объём вырастет в 4 раза, а не в 8: $V=\pi R^2h$ зависит от $R$ квадратично, а от $h$ — линейно. Коэффициент $k^3$ работает, только когда меняются <b>все</b> размеры.</div>
+<h2 id="sec-3"><span class="sec-n" aria-hidden="true">4.</span>Углы и расстояния (ЕГЭ №14)</h2><p>Задание 14 состоит из двух пунктов: а) доказать утверждение о фигуре; б) найти угол, расстояние, площадь сечения или объём. Главные инструменты:</p>
+<ul><li><b>угол между прямой и плоскостью</b> — угол между прямой и её проекцией на плоскость;</li><li><b>угол между плоскостями</b> — линейный угол двугранного угла (два перпендикуляра к линии пересечения плоскостей);</li><li><b>теорема о трёх перпендикулярах</b>;</li><li><b>метод координат</b>: ввести систему координат, найти координаты векторов и применить формулу $\cos\varphi=\dfrac{|\vec a\cdot\vec b|}{|\vec a|\cdot|\vec b|}$.</li></ul>
+<div class="example"><p><b>Пример.</b> В правильной четырёхугольной пирамиде сторона основания равна 6, высота — 4. Апофема: $l=\sqrt{4^2+3^2}=5$ (3 — половина стороны основания). Боковая поверхность: $4\cdot\dfrac12\cdot6\cdot5=60$.</p></div></div></article>
+    <section class="section static-cta sheet"><div><span class="eyebrow">Практика</span><h2>Закрепите тему: 22 задания для ЕГЭ</h2>
+      <p class="muted">От простых к сложным: базовый уровень — 6, повышенный — 13, высокий — 3. Мгновенная проверка, подсказки, подробные решения и тренажёр ошибок.</p></div>
+      <p><a class="btn primary" href="/#/s/math/math-solid/practice">Решать задания по теме</a> <a class="btn" href="/#/cards/math">Флеш-карточки</a></p></section>
+    <nav class="pager" aria-label="Соседние темы"><a class="btn" href="/s/math/math-plane/">← Планиметрия: треугольники, окружность, площади</a><a class="btn primary" href="/s/math/math-deriv/">Производная и её применение →</a></nav>
+  </main>
+  <footer class="foot">
+    <span>Клетка — бесплатный тренажёр для подготовки к ОГЭ и ЕГЭ. Задания составлены по образцу демоверсий ФИПИ.</span>
+    <nav class="static-subjects" aria-label="Предметы"><a href="/s/math/">Математика</a><a href="/s/russian/">Русский язык</a><a href="/s/physics/">Физика</a><a href="/s/chemistry/">Химия</a><a href="/s/biology/">Биология</a><a href="/s/informatics/">Информатика</a><a href="/s/history/">История</a><a href="/s/social/">Обществознание</a><a href="/s/english/">Английский язык</a><a href="/s/geography/">География</a></nav>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.renderMathInElement) renderMathInElement(document.querySelector('main'), { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }], output: 'mathml', throwOnError: false, ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] });
+    });
+  </script>
+</body>
+</html>
