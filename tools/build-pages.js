@@ -169,5 +169,7 @@ const sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www
   .concat(urls.map((u) => `  <url><loc>${SITE}${u}</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>${u.split('/').length === 4 ? '0.8' : '0.6'}</priority></url>`))
   .concat(['</urlset>', '']).join('\n');
 fs.writeFileSync(path.join(root, 'sitemap.xml'), sm);
-fs.writeFileSync(path.join(root, 'tools', 'recrawl-urls.txt'), urls.map((u) => SITE + u).join('\n') + '\n');
+/* Для «Переобхода страниц» в Яндекс Вебмастере: относительные пути (подходят и для http-, и для https-версии сайта), лимит — 150 в сутки */
+fs.writeFileSync(path.join(root, 'tools', 'recrawl-urls.txt'), urls.slice(0, 150).join('\n') + '\n');
+fs.writeFileSync(path.join(root, 'tools', 'recrawl-urls-day2.txt'), urls.slice(150).join('\n') + '\n');
 console.log('Страниц предметов: ' + subjects.length + ', тем: ' + topicCount + ', всего в sitemap: ' + (urls.length + 1));
