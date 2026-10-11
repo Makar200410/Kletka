@@ -22,6 +22,8 @@ const run = (f) => vm.runInContext(fs.readFileSync(f, 'utf8'), ctx, { filename: 
 const subjects = [];
 win.KL.addSubject = (s) => subjects.push(s);
 run(path.join(root, 'js/viz.js'));
+run(path.join(root, 'js/pics.js'));
+for (const f of fs.readdirSync(path.join(root, 'js/pics')).sort()) run(path.join(root, 'js/pics', f));
 for (const f of fs.readdirSync(path.join(root, 'js/viz')).sort()) run(path.join(root, 'js/viz', f));
 for (const f of fs.readdirSync(path.join(root, 'js/data')).sort()) if (f !== 'registry.js') run(path.join(root, 'js/data', f));
 const V = win.KL.viz;
@@ -140,7 +142,7 @@ for (const s of subjects) {
     urls.push(tUrl);
     topicCount++;
     const counter = { n: 0 };
-    const theory = t.theory.map((sec, i) => `<h2 id="sec-${i}"><span class="sec-n" aria-hidden="true">${i + 1}.</span>${esc(sec.h)}</h2>${staticTheory(sec.html)}${V.forSection(t.id, i, counter)}`).join('\n');
+    const theory = t.theory.map((sec, i) => `<h2 id="sec-${i}"><span class="sec-n" aria-hidden="true">${i + 1}.</span>${esc(sec.h)}</h2>${staticTheory(sec.html)}${win.KL.pics.forSection(t.id, i)}${V.forSection(t.id, i, counter)}`).join('\n');
     const prev = s.topics[ti - 1], next = s.topics[ti + 1];
     const levels = [1, 2, 3].map((d) => t.tasks.filter((q) => (q.difficulty || 1) === d).length);
     const exams = (t.exam || []).map(examName).join(' и ');
